@@ -1,18 +1,37 @@
-.env{
-	margin: 0;
-	width: 500px;
-	height: 232px;
-	position: relative;
+h1{
+	text-align: center;
+	border-top: 3px solid blue;
+	border-bottom: 3px solid yellow;
 }
-.address{
-	font-family: cursive;
-	position: absolute;
-	left: 30px;
-	bottom: 30px;
+.all{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
-.stamp{
-	position: absolute;
-	top: 30px;
-	right: 30px;
+.one{
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
 }
 
+a{
+	text-decoration: none;
+	color: red;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	font-weight: bold;
+	padding: 15px 10px;
+	display: block;
+	text-align: center;
+}
+.two{
+	float: right;
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+.content{
+	margin: 50px;
+}
+.content1{
+	margin-top: 50px;
+}
