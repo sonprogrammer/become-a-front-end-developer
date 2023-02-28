@@ -1,0 +1,56 @@
+/*id는 #으로 class는 .으로!!*/
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: darkslateblue;
+}
+
+
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.material-symbols-outlined{
+    font-size: 10rem;
+}
+
+.lg-text{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sm-text{
+    font-size: 1.5rem;
+}
+
+#dynamic{
+    position: relative;
+    display: inline-block;
+}
+
+/* content, display, position의 속성으로 가상 요소를 만들 수 있다*/
+#dynamic::after{    /*dynamic이라는 id속성값을 가지고 있는 요소에 after라는 가상 요소를 만든다*/
+    content:" ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 4px;;    /*바의 너비를 4px로 고정*/
+    height: 100%;   /*p태그의 높이 만큼 높인거임(100%)*/
+    background-color: white;
+}
+
+#dynamic.active::after{     /*active가 있으면 사라지게 해놓는 거임*/
+    display: none;
+}
