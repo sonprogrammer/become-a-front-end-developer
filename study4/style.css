@@ -1,0 +1,80 @@
+*{
+	text-align: center;
+}
+body{
+	background-color: #f0e8d9;
+}
+h1{
+	font-size: 64px;
+	margin-bottom: 30px;
+	margin-top: 75px;
+	text-align: center;
+
+} 
+h2{
+	font-size: 32px;
+	margin-bottom: 75px;
+	text-align: center;
+}
+.chicken{
+	border-radius: 10px;
+	width: 300px;
+	background-color: white;
+	margin-bottom: 50px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+.chicken h1{
+	font-size: 32px;
+	color: 58595b;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.chicken h2{
+	font-size: 16px;
+	color: 58595b;
+	margin-bottom: 16px;
+	margin-right: 20px;
+	margin-left: 20px;
+	text-align: left;
+}
+.pizza{
+	border-radius: 10px;
+	width: 300px;
+	background-color: white;
+	margin-bottom: 50px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+.pizza h1{
+	font-size: 32px;
+	color: 58595b;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.pizza h2{
+	font-size: 16px;
+	color: 58595b;
+	margin-bottom: 16px;
+	margin-right: 20px;
+	margin-left: 20px;
+	text-align: left;
+}
+.chicken a{
+	text-decoration: none;
+	font-size: 27px;
+	color: 0000ee;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.pizza a{
+	text-decoration: none;
+	color: 58595b;
+	font-size: 27px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+

@@ -1,0 +1,48 @@
+#bar{
+	padding: 0 20px;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+	background-color: white;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 50);
+	height: 60px;
+}
+#logo{
+	float: left;
+
+	line-height: 60px;
+}
+#logo img{
+	vertical-align: middle;
+}
+.back{
+	background-image: url("logo.jpg");
+	background-size: cover;
+	background-position: center center;
+	height: 670px;
+	text-align: center;
+	line-height: 670px;
+}
+.back .apple {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+.back .apple h1{
+	font-size: 36px;
+	margin: 0;
+	margin-bottom: 13px;
+	color: white;
+	font-weight: 400;
+}
+.back .apple p{
+	color: white;
+}
+
+.back .apple a{
+	font-size: 14px;
+	background-color: white;
+	color: black; 
+	padding: 10px 40px;
+	text-decoration: none;
+	border-radius: 5px;
+}

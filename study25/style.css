@@ -1,0 +1,83 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	min-width: 992px;
+}
+.navbar{
+	height: 60px;
+	padding: 0 30px;
+	overflow: hidden;
+}
+.helper{
+	display: inline-block;
+	vertical-align: middle;
+}
+#logo{
+	float: left;
+	vertical-align: middle;
+	line-height: 60px;
+}
+#logo img{
+	vertical-align: middle;
+
+}
+
+.navbar ul{
+	margin: 0;
+}
+.navbar li{
+	float: right;
+	margin-right: 30px;
+	list-style: none;
+}
+.navbar a{
+	text-decoration: none;
+	color: black;
+}
+.main{
+	text-align: center;
+}
+h1{
+	margin-top: 60px;
+	margin-bottom: 60px;
+	font-size: 24px;
+	color: #545454;
+}
+.products{
+	display: inline-block;
+}
+.products p{
+	font-size: 16px;
+	margin-top: 20px;
+
+}
+.bag{
+	float: left;
+	margin-right: 20px;
+
+}
+.loafer{
+	float: left;
+	margin-right: 20px;
+}
+.slipper{
+	float: left;
+}
+.clear{
+	clear: both;
+}
+.social{
+	margin-bottom: 80px;
+	margin-top: 120px;
+	text-align: center;
+
+
+}
+.social a{
+	margin-right: 10px;
+	margin-left: 10px;
+	text-decoration: none;
+}
+

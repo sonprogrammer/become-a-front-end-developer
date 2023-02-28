@@ -1,0 +1,11 @@
+img{
+	display: block;
+	margin: 0;
+
+}
+.monkey{
+	position: relative;
+	bottom: 100px;
+	left: 400px;
+
+}

@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  min-width: 768px;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+
+#side {
+  background-color: black;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+}
+
+#logo{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+li{
+	list-style: none;
+	color: white;
+	margin-bottom: 30px;
+	margin-left: 22px;
+	margin-top: 30px;
+}
+li: last-child{
+	margin-bottom: 60px;
+}
+
+#social{
+	text-align: center;
+}
+
+.fb{
+	margin-right: 13px;
+	margin-top: 25px;
+}
+
+#main {
+  margin-left: 250px;
+}
+
+#main .center {
+  text-align: center;
+  background-image: url("rides.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 750px;
+  line-height: 750px;
+}
+
+#main .info {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+#main h1 {
+  margin: 0;
+  margin-bottom: 40px;
+  color: white;
+  font-size: 38px;
+}
+
+#main a {
+  padding: 10px 40px;
+  border: 2px solid white;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}

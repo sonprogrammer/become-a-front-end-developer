@@ -1,0 +1,9 @@
+h1{
+	color: black;
+	text-align: center;
+	font-size: 57px;
+}
+h1:hover{
+	color: orange;
+	text-decoration: underline;
+}

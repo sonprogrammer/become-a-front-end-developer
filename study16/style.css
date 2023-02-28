@@ -1,0 +1,45 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	height: 2000px;
+}
+ul{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+li{
+	list-style: none;
+}
+#spacebox{
+width: 100%;
+height: 50px;
+}
+#navbar{
+	width: 100%;
+	height: 50px;
+	box-shadow: 2px 2px 1px 1px #cccccc;
+	background-color: white;
+	position: fixed;
+}
+#navbarmenu{
+	float: right;
+	height: 100%;
+}
+.menucell{
+	float: right;
+	width: 100px;
+	height: 100%;
+	text-align: center;
+	text-decoration: none;
+	line-height: 50px;
+	position: relative;
+}
+#logiccontainer{
+	width: 500px;
+	height: 400px;
+	background-color: #cccccc;
+}

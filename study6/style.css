@@ -1,0 +1,43 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color: lightseagreen;
+}
+.login {
+	padding: 20px ;
+	background-color: #eeeff1;
+	width: 300px;
+	display: block;
+	margin: 50px auto auto auto;
+	border-radius: 5px;
+}
+.text-field{
+	font-size: 14px;
+	border-style: none;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	width: 260px;
+	color: #9b9b9b;
+}
+.submit-btn{
+	width: 260px;
+	border-radius: 5px;
+	background-color: #1bbc9b;
+	font-size: 14px;
+	color: white;
+	margin: auto auto 20px auto;
+	padding: 10px;
+}
+.submit-btn:hover{
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 50);
+}
+.link{
+	text-align: center;
+	font-size: 12px;
+
+}
+.link a{
+	color: #9b9b9b;
+}
