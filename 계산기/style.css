@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator{
+    width: 287px;
+    border: 1px solid #333;
+    background-color: #ccc;
+    padding: 5px;
+    
+}
+
+.calculator form{
+    display: grid;  /*display: grid 하면 엑셀표처럼 된다*/
+    grid-template-columns: repeat(4, 65px); /*이건 repeat에 4열 높이 65px이란 소리이다*/
+    grid-auto-rows: 65px; /*행의 사이즈도 65px이란 소리*/
+    grid-gap: 5px
+}
+
+.calculator form input{
+    border: 2px solid #333;
+    cursor: pointer;
+    font-size: 19px;
+    font-style: bold;
+}
+
+.calculator form input:hover{
+    box-shadow: 1px 1px 2px #333;    /*그림자 처음(위아래)는 1px, 두번째(양옆)은 1px이고 퍼짐 정도는 2px이란 뜻이다*/
+}
+
+.calculator form .clear{
+    background-color: #ed4848;
+}
+
+.calculator form .operator{
+    background-color: orange;
+}
+
+.calculator form .dot{
+    background-color: green;
+}
+
+.calculator form input[type= 'text']{    /*type이 text인걸 grid-column을 이용해서 4칸을 차지해라 라는 의미*/
+    grid-column: span 4;
+    text-align: right;
+    padding 0 10px;
+} 
+
+.calculator form .clear{
+    grid-column: span 3;
+}
+
+.calculator form .result{
+    grid-column: span 2;
+}
+
