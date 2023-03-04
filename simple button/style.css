@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #204063;
+    display: flex;
+    justify-content: center; /*수평방향 중심 여기서 바디의 높이값을 지정해줘야 중앙이된다*/
+    align-items: center; /*수직 방향 중심*/
+    height: 100vh;
+}
+
+.btn{
+    background: none;
+    border: 2px solid white;
+    font-size: 35px;
+    color: white;
+    padding: 20px 40px; /*앞쪽은 위아래 뒤쪽은 양옆임*/
+    width:250px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-swap span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ed4848;
+    padding: 20px 40px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;   /*transition은 어떤 행동을 보여줄꺼냐이다 여기서는 오파시티값 즉 투병도를 0.5초동안 보여준다는 뜻이다*/
+}
+
+.btn-swap:hover span{
+    opacity: 1;     /*마우스를 span태그안에 있는 sold out위에 올려놓으면 투명도가 1이된다는 뜻*/
+}
+
+.btn-swap::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ed4848;
+    transition: width 0.5s;
+}
+
+.btn-swap:hover::before{
+    width: 100%;
+    
+}
