@@ -1,0 +1,70 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: inherit; /*부모로부터 상속을 받으라는 inherit을 준다*/
+    text-decoration: none;
+}
+
+#main{
+    background: url(background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Questrial', sans-serif;
+}
+
+#contents{
+    position: absolute;
+    width: 100%; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: center;
+}
+
+#contents h1{
+    font-family: 'Dancing Script', cursive, cursive;
+    font-size: 70px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+#contents p{
+    font-size: 23px;
+    margin-bottom: 16px;
+}
+
+#contents a{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+#contents a:hover{
+    background-color:red;
+}
+
+@media(max-width:769px){ /*미디어 크기가 769px보다 작아지면 media안에 있는 코드가 실행된다 크기에 따라 서로다른 속성을 적용할수있다 */
+
+    #contents h1{
+        font-size: 50px;
+    }
+    #contents p{
+        font-size: 20px;
+    }
+    #contents a{
+        font-size: 14px;
+    }
+}
