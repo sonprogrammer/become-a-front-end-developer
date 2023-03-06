@@ -1,0 +1,61 @@
+body{
+    height: 100vh;  /*100vh라 하면 웹페이지의 크기와 일치하게 된다*/
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); /*radial-gradient함수는 원형 그라데이션 만들기이다
+    ellipse at bottom는 원형의 중심이 어딘지를 알려줌 그리고 첫번째 색상은 시작위치의 색상이고 두번째색은 종료위치의 색상이다*/
+    overflow: hidden; 
+}
+
+.snow{
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: snow 10s linear infinite; /*균일한 속도로 내려오는 효과를 보여주기 위해서 linear라는 속성을 이용한다  */
+}
+
+.snow:nth-of-type(2n){ /*2의 배수에 해당하는 값만 적용*/
+    width: 7px;
+    height: 7px;
+    animation-duration: 7s; /*2의 배수에 해당하는 snow만 7초안에 내려온다. 그 이외의 snow는 위에서 animation효과에서 준 10초에 걸쳐내려온다*/
+    animation-delay: 1s; /*2의 배수의 snow는 1초 늦게 시작 된다(내린다)*/
+
+}
+
+.snow:nth-of-type(2n+1){ /*2의 배수 +1 에 해당하는 값만 적용*/
+    animation-duration: 8s; /*2의 배수에 해당하는 snow만 7초안에 내려온다. 그 이외의 snow는 위에서 animation효과에서 준 10초에 걸쳐내려온다*/
+    animation-delay: 2s; /*2의 배수의 snow는 1초 늦게 시작 된다(내린다)*/
+}
+
+.snow:nth-of-type(9n){ /*2의 배수에 해당하는 값만 적용*/
+    animation-duration: 9s; /*2의 배수에 해당하는 snow만 7초안에 내려온다. 그 이외의 snow는 위에서 animation효과에서 준 10초에 걸쳐내려온다*/
+    animation-delay: 3s; /*2의 배수의 snow는 1초 늦게 시작 된다(내린다)*/
+
+}
+
+@keyframes snow{    /*keyframes이라는 룰을 이용해서 snow라는 이름을 지정한다*/
+    0%{
+        opacity: 0; /*완전히 투명함, 안보임->애니메이션 시작 부분은 안보임 */
+        transform: translateY(0); /*이동을 위해 transform속성을 사용해서 translateY값을 지정한다*/
+    }
+    20%{
+        opacity: 1; /*완전히 투명함, 안보임->애니메이션 시작 부분은 안보임 */
+        transform: translate(-15px, 20vh); /*translate 속성을 사용하면 x값과 y값을 동시에 적용시킬수 있다, 앞이 x 뒤에가 y*/
+    }
+    40%{
+        opacity: 1; /*완전히 불투명함, 잘보임->애니메이션 끝 부분은 잘보이게 됨*/
+        transform: translate(15px,40vh);
+    }
+    60%{
+        opacity: 1; /*완전히 불투명함, 잘보임->애니메이션 끝 부분은 잘보이게 됨*/
+        transform: translate(-15px,60vh);
+    }
+    80%{
+        opacity: 1; /*완전히 불투명함, 잘보임->애니메이션 끝 부분은 잘보이게 됨*/
+        transform: translate(0,80vh); /*0은 정중앙임*/
+    }
+    100%{
+        opacity: 1; /*완전히 불투명함, 잘보임->애니메이션 끝 부분은 잘보이게 됨*/
+        transform: translateY(100vh);
+    }
+}

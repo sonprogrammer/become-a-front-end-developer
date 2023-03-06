@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>christmas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+        function creatSnow(){
+            const e1 = document.createElement("div");
+            e1.classList.add('snow');
+            e1.style.marginLeft = randomPosition() + 'px';
+            document.body.appendChild(e1);
+        }
+
+        function randomPosition(){
+            return Math.floor(Math.random()*window.innerWidth); //innerWidth는 화면안에서 한다는 뜻
+        }
+        for(let i =0; i< 300; i++){
+        creatSnow();
+        }
+        
+    </script>
+        
+</body>
+</html>
