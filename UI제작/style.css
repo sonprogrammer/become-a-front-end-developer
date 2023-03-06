@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.ghost{
+    animation: moveUpDown 3s infinite;  /*3초동안 무한으로 moveUpDown이 되는것이다*/
+    position: absolute;
+}
+
+@keyframes moveUpDown{
+    0%{
+        margin-top: 0px;
+    }
+    50%{
+        margin-top: -50px;
+    }
+    100%{
+        margin-top: 0px;
+    }
+}
+
+.ghost .body{
+    width: 120px;
+    height: 160px;
+    background-color: white;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+    position: relative;
+}
+.ghost .body .face{
+    display: flex;
+    justify-content: space-between; /*중간에 간격주기(눈과 눈사이 니깐)*/
+    width: 70px;
+    position: absolute;
+    flex-wrap: wrap;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.ghost .body .face .eye{
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+.ghost .body .face .mouse{
+    width: 33px;
+    height: 15px;
+    background-color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 18px;
+    margin-top: 13px;
+}
+
+.ghost .bottom{
+    display: flex;  /*한줄로 배치가 되야하므로 display: flex로 한것이다*/
+
+}
+
+.ghost .bottom .leg{
+    background-color: white;
+    width: 24px;
+    height: 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.ghost .bottom .leg:nth-child(2n){  /*2의 배수에 해당하는것만 해당한다. 즉 클래스 이름이 같더라도 몇번째오는 것에만 초점을 두고 속성을 줄수있음*/
+    position: relative; /*현재 가지고 있는 위치를 기준으로 하겠다는 의미이다. 밑에다 속성을 더해줌으로써 이동 시킬수 있다*/
+    top: -6px;
+    background-color: #000;
+    border-radius: 50%;
+}
