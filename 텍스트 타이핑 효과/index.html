@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text typing </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Questrial&display=swap" rel="stylesheet">
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #363636;
+            margin: 0; /*margin 0은 여백을 없애겠다는 의미 그럼 스크롤도 없어짐*/
+        }
+        .typing-text{
+            font-family: 'Fuzzy Bubbles', cursive;
+            font-size: 2rem;
+            color: white;
+            border-right: 3px solid white; /*border-rigth속성은 글자끝에 막대기를 생기게 하겠다는 의미이다 그 속성은 3px에 소리드에 흰색이란 뜻이다*/
+            animation: blink .5s infinite, typing 2s steps(22); /*typing이라는 애니메이션이 22번에 걸쳐서 동작하게 한다*/
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes typing{
+            from{   /*시작*/
+                width: 0;
+            }
+            to{     /*끝*/
+                width: 297px;
+            }
+        }
+
+        @keyframes blink{
+            50%{ /*0초부터 0.25초까지는 흰색에서 점점 투명색으로 변한다(transparent)그리고 0.25ㅊ초에서 0.5초까지는 투명에서 다시 흰색으로 변한다 */
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="typing-text">Welcome, HTML, CSS!</p>
+
+</body>
+</html>
