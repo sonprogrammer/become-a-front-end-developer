@@ -1,0 +1,48 @@
+section{
+    /* font-family: 'Poppins', sans-serif; */
+    padding: 5rem 0;
+    background-color: #f8f8f8;
+
+}
+
+section .do-me::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+section .do-me .do-inner{
+    width: 30%;
+    padding: 2rem;
+    float: left;
+    background-color: #fff;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+section .do-me .do-inner:last-child{    /*do-me의 do-inner에서 last-child는 마지막것을 말한다   */
+    margin-right: 0;    /*이렇게 하면 각 do-inner가 가지고 있는영역이 마진까지해서 35%가 된다 그럼 총 105%인데 마지막 do-inner의 마진을 빼주면 한줄에 생길수 있게된다*/
+}
+
+section .do-me .do-inner .icon i{
+    font-size: 2.5rem;
+    color: #ff6a6a;
+}
+
+section .do-me .do-inner .content h3{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+section .do-me .do-inner p {
+    font-size: 1.15rem;
+}
+section .do-me .do-inner:hover{
+    background-color: lightcoral;
+    color: white;
+}
+
+section .do-me .do-inner:hover .icon i{
+    color:gold;
+}

@@ -1,0 +1,39 @@
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between; /*space*/
+    width: 100%;
+    align-items: center;
+}
+
+header button{
+    background-color: transparent; /*transparent*/
+    border: 0;
+    cursor: pointer;
+    
+}
+
+header h1 button{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header nav ul li{
+    padding: 10px;
+
+}
+
+header nav ul{
+    display: flex; /*세로로 정렬인걸 가로정렬로 바꿔줌*/
+    
+}
+
+header nav ul li button{
+    font-size: 1.2rem;
+}
