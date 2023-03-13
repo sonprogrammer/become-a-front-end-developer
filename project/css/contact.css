@@ -1,0 +1,74 @@
+section .contact-me::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+section .contact-me .left{
+    width: 30%;
+    float: left;
+}
+
+section .contact-me .left .card{
+    border: solid 1px #ccc;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+
+}
+
+section .contact-me .left .card .icon i{
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+
+section .contact-me .right{
+    width: 65%;
+    float: left;
+    margin-left: 5%;
+    border: solid 1px #ccc;
+    padding: 1rem;
+}
+
+section .contact-me .right .card .form-group{
+    margin-bottom: 1.25rem;
+}
+
+section .contact-me .right label{
+    display: block;
+    margin-bottom: 0.85rem;
+}
+
+section .contact-me .right .form-group input{
+    width: 100%;
+    padding: 0.625rem;
+    outline: none; /*마우스를 위에 올려놓으면 진해지는 효과를 없애기위한 속성*/
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+section .contact-me .right .form-group input:focus
+,section .contact-me .right .form-group textarea:focus{
+    border: 1px solid #719ece;
+    box-shadow: 0 0 10px #719ece;
+}
+
+section .contact-me .right .form-group textarea{
+    width: 100%;
+    height: 200px;
+    outline: none;
+    resize: none; /*textarea는 기본적으로 텍스트상자의 크기를 줄일수 있는데 그걸 못하게 막기 위해 사용하는 속성이다*/
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+}
+
+section .contact-me .right button{
+    width: 100%;
+    padding: 1rem;
+    background-color: #f78b00;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

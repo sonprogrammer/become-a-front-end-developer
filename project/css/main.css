@@ -30,6 +30,7 @@ main p{
 main button.download{
     background-color: transparent; /*transparent로 하면 버튼의 배경이 날라간다*/
     border: 3px solid white;
+    padding: 1rem 2rem;
     border-radius: 20px;
     margin-top: 3rem;
     color: white;
