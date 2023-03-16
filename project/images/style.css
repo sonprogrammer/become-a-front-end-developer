@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-a. a:link, a:visited{
+a, a:link, a:visited{
     text-decoration: none;
     color: inherit;
 }
@@ -23,8 +23,9 @@ li{
 /* header */
 
 header{
-    position: absolute;
+    position: fixed;
     top: 0;
+    z-index: 1;
     width: 100%;
     padding: 1rem;
 }
@@ -61,6 +62,20 @@ header nav ul{
 
 header nav ul li button{
     font-size: 1.2rem;
+}
+
+header.active{ /*header라는 태그에 active라는 클래스 가 추가되면  밑에 속성을 한다*/
+    background-color: #000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 /* main */

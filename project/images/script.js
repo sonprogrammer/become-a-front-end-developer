@@ -1,4 +1,7 @@
 //텍스트 작성과 삭제 즉시 실행함수
+//(function()){...}();는 즉시실행함수임
+
+
 
 (function(){
 const spanE1 = document.querySelector("main h2 span"); //main에 있는 h2의 span태그 선택
@@ -32,4 +35,41 @@ function deleteTxt(){
 }
 
 writeTxt();
-})(); //(function()){}();는 즉시실행함수임
+})();   
+
+//수직 스크롤링 발생하면 header태그에 active 클래스 추가 및 삭제
+(function(){
+    const headerE1 = document.querySelector("header");
+window.addEventListener("scroll", function(){
+    requestAnimationFrame(scrollCheck);
+});
+
+function scrollCheck(){
+    const browserScrollY = window.scrollY ? window.scrollY : window.pageXOffset;
+    if(browserScrollY > 0){
+        headerE1.classList.add('active');
+    }else{
+        headerE1.classList.remove('active');
+    }
+    console.log('scroll')
+}
+})();
+
+//애니메이션 스크롤
+(function(){
+    const animationMove = function(selector){
+        const target = document.querySelector(selector);
+        const browserScrollY = window.pageYOffset;
+        const targetScrollY = target.getBoundingClientRect().top + browserScrollY;
+        window.scrollTo({top: targetScrollY, behavior:'smooth'})
+    }
+    
+    const scrollMoveE1 = document.querySelectorAll("[data-animation-scroll='true']"); //data-animation-scroll='true'인것 만 찾아줘라는 뜻
+        console.log(scrollMoveE1);
+        for(let i =0; i < scrollMoveE1.length; i++){
+            scrollMoveE1[i].addEventListener("click", function(e){
+                animationMove(this.dataset.target);
+            });
+        }
+})();
+

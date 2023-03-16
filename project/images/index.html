@@ -9,24 +9,24 @@
 </head>
 <body>
      <!--header-->
-     <header>
+     <header class="active"> <!--header라는 태그에 active라는 클래스를 줬다.-->
         <div class="container">
             <h1>
-                <button>SON</button>
+                <button data-animation-scroll="true" data-target="#main">SON</button>
             </h1>
             <nav>
                 <ul>
                     <li>
-                        <button>About</button> <!--a가 아니라 button이라 한이유는 다른링크로 가는것이아니라 내부의 특정영역으로 가는거기 때문 즉, 한페이지에 다있다는 것임-->
+                        <button data-animation-scroll="true" data-target="#about">About</button> <!--a가 아니라 button이라 한이유는 다른링크로 가는것이아니라 내부의 특정영역으로 가는거기 때문 즉, 한페이지에 다있다는 것임-->
                     </li>
                     <li>
-                        <button>Feature</button>
+                        <button data-animation-scroll="true" data-target="#features">Feature</button>
                     </li>
                     <li>
-                        <button>Portfolio</button>
+                        <button data-animation-scroll="true" data-target="#portfolio">Portfolio</button>
                     </li>
                     <li>
-                        <button>Contact</button>
+                        <button data-animation-scroll="true" data-target="#contact">Contact</button>
                     </li>
                 </ul>
             </nav>
@@ -116,7 +116,7 @@
             </div>
         </div>
     </section>
-    <!-- backcgroun -->
+    <!-- backcground -->
     <div class="bg"></div>
     <!-- portfolio -->
     <section id="portfolio">
