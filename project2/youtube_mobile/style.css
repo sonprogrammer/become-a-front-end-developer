@@ -1,0 +1,213 @@
+/* 미리 색, 폰트 크기, 사이즈 정해놓기 그리고 이 속성을 밑에서 그대로 사용할 수 있음 숫자로 안치고 */
+/* :root{
+    color 
+    --white-color
+    --black-color
+    --blue-color
+    --red-color:
+    --grey-dark-color:
+    --grey-ligh-color:
+     size 
+    --padding: 12px
+    --avatar-size: 36px
+
+     font size 
+    --font-large: 18px
+    --font-medium: 14px
+    --font-small:12px
+    --font-micro: 10px
+} */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Roboto;
+}
+ul{
+    list-style: none;
+}
+button,
+button:focus{ /*button과 button이 focus가 되었을 때 밑에 속성이 이루어짐*/
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Header */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: black;
+}
+
+header .logo{
+    font-size: 18px;
+    color: white;
+}
+header .logo i{
+    color: red;
+}
+
+header .icons .fa-search{
+    margin-right: 12px;
+    color: white;
+}
+
+header .icons .fa-ellipsis-v{
+    color: white;
+}
+
+/* Video Player */
+.player{
+    text-align: center;
+    background-color: black;
+}
+
+.player video{
+    width: 100%; 
+    height: 50vh;
+}
+
+body >.info{
+    padding: 12px;
+}
+
+.info .metadata .hashtags {
+    display: flex;
+    font-size: 12px;
+    color: blue;
+}
+
+.info .metadata .hashtags li{
+    margin-right: 12px;
+}
+
+.info .metadata .titleAndButton{
+    display: flex;
+}
+
+.info .metadata .titleAndButton .title{
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /*줄이 길어도 줄 길이를 2줄로 줄이겠다는 것*/
+    margin-right: 12px;
+}
+
+.info .metadata .titleAndButton .moreBtn{
+    height: 100%;
+
+}
+
+.info .channel .metadata .img{
+    width: 100%;
+    height: 100%;
+}
+.info .views{
+    font-size: 12px;
+    color: rgb(82, 77, 77);
+}
+
+/* Action Buttons */
+.info .actions{
+    display: flex;
+    justify-content: space-around;
+    margin: 12px 0;
+}
+
+.info .actions button{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: darkgrey;
+}
+
+.info .actions button i{
+   margin: 0 auto;
+    margin-bottom: 6px;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.info .actions button i.active{
+    color: blue;
+}
+
+/* Channel Description */
+.channel{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.channel .metadata{
+    display: flex;
+    align-items: center;
+}
+
+.channel .metadata .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.channel .metadata img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.channel .metadata .info .name{
+    font-size: 14px;
+}
+
+.channel .metadata .info .subscribers{
+    font-size: 12px;
+    color: grey;
+}
+
+.channel .subscribe{
+    text-transform: uppercase;
+    color: red;
+    font-size: 14px;
+}
+
+/* Up Next */
+.UpNext{
+    padding: 12px;
+}
+.UpNext > .title{
+    font-size: 14px;
+    color: darkgray;
+    margin-bottom: 6px;
+}
+
+.UpNext .item{
+    display: flex;
+    margin-top: 12px;
+}
+
+.UpNext .item .img{
+    flex: 1 1 35%;
+    margin-right: 12px;
+}
+.UpNext .item .img img{
+    width: 100%;
+}
+
+.UpNext .item .info{
+    flex: 1 1 60%; 
+}
+.UpNext .item .moreBtn{
+    flex: 1 1 5%;
+}
+
+.UpNext .item .info{
+    display: flex;
+    flex-direction: column;
+}
