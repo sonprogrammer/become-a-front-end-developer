@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <h4 id="test">안녕하세요 </h4>
+    <script>
+
+        
+        // document.querySelector('#test') //$('.test1')과 사용은 비슷하지만 querySelector는 맨위에 하나밖에 못찾는다, 
+        //만약에 더 찾고 싶으면 qeurySelectorAll('#test')[2] 이와 같이 test명을 가진 전체를 찾고 3번째 있는 test를 가져온다 -- 이러면 너무 길어진다 
+
+        $('#test').html('안녕') //id가 test인것을 찾아주세요라는 뜻
+       // $('.test1') //class명이 test1인 클래스를 찾아주세요 라는 뜻
+       
+    </script>
+    
+</body>
+</html>
