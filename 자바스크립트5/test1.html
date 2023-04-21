@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        const x = Number(prompt('type number'))
+        alert((x>=0)? 'over 0' : 'under 0')
+        */
+       /* 태어난 년도별로 띠 맞추기
+       const year = Number(prompt('birth year')) % 12
+       const tti = 'monkey, chicken, dog, pig, mouse, cow, tiger, rabbit, dragon, snake, horse, ship'.split(',')
+       alert(`${tti[year]}`)
+       */
+    //   
+    //    const result = (100 > 200) 
+    // /*true일 때 ? 뒤 바로 실행 */ ? prompt('값을 입력하세요')
+    // /*false일 때 : 뒤 바로 실행 */ : confirm('버튼을 클릭하세요')
+    // alert(result) 
+
+    const rawInput = prompt('birth year')
+    const year = Number(rawInput)
+    const e = year % 12
+
+    let result
+    if(e === 0){
+        result = '신'
+    }else if(e === 1){
+        result = '유'
+    }else if(e === 2){
+        result = '술'
+    }else if(e === 3){
+        result = '해'
+    }else if(e === 4){
+        result = '자'
+    }else if(e === 5){
+        result = '축'
+    }else if(e === 6){
+        result = '인'
+    }else if(e === 7){
+        result = '묘'
+    }else if(e === 8){
+        result = '진'
+    }else if(e === 9){
+        result = '사'
+    }else if(e === 10){
+        result = '오'
+    }else if(e === 11){
+        result = '미'
+    } 
+
+    let result1
+    const e1 = year % 10
+    if(e1 === 0){
+        result1 = '경'
+    }else if(e1 === 1){
+        result1 = '신'
+    }else if(e1 === 2){
+        result1 = '임'
+    }else if(e1 === 3){
+        result1 = '계'
+    }else if(e1 === 4){
+        result1 = '갑'
+    }else if(e1 === 5){
+        result1 = '을'
+    }else if(e1 === 6){
+        result1 = '병'
+    }else if(e1 === 7){
+        result1 = '정'
+    }else if(e1 === 8){
+        result1 = '무'
+    }else if(e1 === 9){
+        result1 = '기'
+    } 
+    alert(`${year}년생은 ${result} ${result1}이다`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

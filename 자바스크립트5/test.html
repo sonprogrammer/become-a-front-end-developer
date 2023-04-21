@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* const date = new Date()
+         const hours = date.getHours()
+
+         if(hours < 12){
+             alert('오전');
+         }else{
+             alert('오후');
+         }
+        */
+       /* 타입한 숫자 홀수인진 짝수인지 보기
+        const a = Number(prompt('type number'))
+        if(a%2 === 0){
+            alert('even')
+        }else{
+            alert('odd')
+        }
+        */
+        // 월 입력하고 계절확인하기
+        const month = (new Date()).getMonth() + 1
+
+        if(month > 2 && month < 6){
+            alert('spring')
+        } else if(month >= 6 && month < 9){
+            alert('summer')
+        } else if(month >=9 && month < 12){
+            alert('autumn')
+        } else{
+            alert('winter')
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
