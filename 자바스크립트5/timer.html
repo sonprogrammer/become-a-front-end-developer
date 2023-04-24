@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //setTimout() --> 특정한 시간 후에 한번 실행
+           const a = setTimeout(function(){
+                console.log('setTimout함수 이다')
+            },1000) //1초 이후에 실행
+
+        //setInterval() --> 특정한 시간마다 무언가를 할때 사용
+            const b = setInterval(function(){
+                console.log('setInterval함수이다')
+            }, 2000) //1초마다 한번씩 실행
+
+            console.log(a, b)
+
+        //즉시 실행 함수
+        (function(){
+
+        })()
+
+
+        //화살표 함수 
+        (() =>{
+
+        })()
+        //clearTimout()
+        clearTimeout(a)
+        //clearInterval()
+        clearInterval(b)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

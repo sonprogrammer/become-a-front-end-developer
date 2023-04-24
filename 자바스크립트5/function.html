@@ -6,12 +6,38 @@
     <title>Document</title>
     <script>
         //함수 만들기
-        const f = function() {}
+        // const f = function() {}
 
-        alert()
-        prompt()
-        f()
+        // alert()
+        // prompt()
+        // f()
         // 함수() --> 함수를 호출
+
+        // const isLeapYear = function(연도){
+        //     return  
+        //     (연도 % 4 === 0) // 윤년
+        //     &&(연도 % 100 !== 0) //윤년 X
+        //     || (연도 % 400 === 0) //윤년
+        // }
+
+        // console.log(`2020년은 윤년일까? === ${isLeapYear(2020)}`)// 윤년 -true
+        // console.log(`2010년은 윤년일까? === ${isLeapYear(2020)}`)//윤년 아님 - false
+        // console.log(`2000년은 윤년일까? === ${isLeapYear(2020)}`)//윤년 -true
+        // console.log(`1900년은 윤년일까? === ${isLeapYear(2020)}`)//윤년아님 - false
+
+        const min = function(array){
+            let output = array[0]
+            console.log(`처음 실행 때의 output = ${output}`)
+            for (const value of array){
+                console.log(`현재 비교 대상 ${output}과 ${value}중에 작은 것은?`)
+                if(output > value){
+                    output = value
+                }
+                console.log(` = ${output}`)
+            }
+        }
+        
+        console.log(min([52, 273, 32, 203, 275, 24, 57]))
     </script>
 </head>
 <body>

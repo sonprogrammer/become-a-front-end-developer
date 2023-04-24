@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // const test = function(콜백함수){    //매개변수로 전달하는 함수를 콜백함수라 생각해도 됨
+        //     console.log(콜백함수)
+        // }
+        // test(10)
+        // test('hello')
+        // test(true)
+
+        // const fx = function(){
+        //     console.log('heelo')
+        // }
+        // test(fx)
+
+        //콜백함수의 형태가 매개변수로 숫자 하나를 받는 형태라고 예상 
+            // const test = function(콜백함수){
+            //     for (let i = 0; i < 5; i++){
+            //         콜백함수(i)
+            //     }
+            //     // 콜백함수(10) --> //출력 10번째 안녕하세요
+            // }
+            // const 함수 = function(콜백함수의_매개변수){
+            //     console.log(`${콜백함수의_매개변수} 번째 안녕하세용`)   //출력 10번째 안녕하세요
+            // }
+            //-------------------------------------------------------------------------------
+            // const test = function(배열, 콜백함수){
+            //     for(const 값 of 배열){
+            //         콜백함수(값)
+            //     }
+            // }
+            // const 함수 = function(콜백함수의_매개변수){
+            //     console.log(`${콜백함수의_매개변수} 번째 안녕하세용`)
+            // }
+            // test([52, 273, 103, 32],함수)
+            //-------------------------------------------------------------------------------
+            
+            //forEach
+            // const 배열 = [273, 52, 103, 32, 57]
+            // 배열.forEach(function(value, index){
+            //     console.log(`${index}번째의 값은 ${value}입니다 `)
+            // })
+            //     //위 출력 결과 
+                //0번째의 값은 273입니다 
+                // 1번째의 값은 52입니다 
+                // 2번째의 값은 103입니다 
+                // 3번째의 값은 32입니다 
+                // 4번째의 값은 57입니다 
+            
+        //-------------------------------------------------------------------------------
+            //filter ->true 또는 false를 리턴하는 함수가 올것을 예상한다 
+            // let 배열 = [273, 52, 103, 32, 57]
+            // // console.log(배열.filter(function(value, index){
+            // //     // return true     -->모든 요소가 다들어있는 배열을 출력
+
+            // // }))
+            // 배열 = 배열.filter(function(value, index){
+            //     return value % 2 === 0 --> 짝수만 있는 배열 출력
+            // })
+            // console.log(배열)
+
+            // console.log(배열.filter(function(value, index){
+            //     return false    --> 모든 요소가 없는 배열을 출력
+            // }))
+        //-------------------------------------------------------------------------------
+        //map
+        // let 배열 = [273, 52, 103, 32, 57]
+        // 배열 = 배열.map(function(value, index){
+        //     return value + "!!"
+        // })
+        // console.log(배열) --> 각각의 배열 요소 뒤에 !!출력 ==> ['273!!','52!!','103!!','32!!','57!!']
+        //-------------------------------------------------------------------------------
+        //화살표함수
+        let 배열 = [273, 52, 103, 32, 57]
+        배열 = 배열.filter(function(value, index){
+                return value % 2 === 0 //--> 짝수만 있는 배열 출력
+            })
+
+            //위코드와 아래 코드는 동일 함
+        //화살표 함수 ==> (매개변수) => {본문}
+        배열 = 배열.filter((value, index) => value % 2 === 0) //return값이 하나이면 return이랑 중괄호 지울수 있음, function도 지울 수있음
+
+        배열 = 배열.map(function(value, index){
+            return value + "!!"
+        })
+        //화살표 함수로 변환!!
+        배열 = 배열.filter((value, index) => value + "!!")
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

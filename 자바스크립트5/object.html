@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //배열 안에 있는 것을 요소라함
+        const array =[100, 20, 'hello', true, function(){}, ()=>{}]
+        console.log(array[0]) //--> 100
+        array[0] = 200
+        console.log(array[0]) //--> 200으로 바뀜
+
+        //객체 안에 있는것을 속성이라함, 객체 안에 있는 함수는 메서드라 함 다시 말하면 자바스크리브에서 메서드는 속성에 포함된다 객체안에 있는 함수가 메소드이다
+        const object = {
+            // key : value,
+            name:'youngjin',
+            age: 27
+        }
+        
+        object['name'] //-->youngjin
+        console.log(object.name) //--> youngjin
+        object.name = 'son'
+        object.age = 25
+        console.log(object.name) //--> son으로 바뀜
+        console.log(object.age) //--> 25로 바뀜
+
+
+        const dog ={
+            name: 'taejun',
+            age: 27,
+            bark: function(){   //메소드 
+                console.log(`${dog.name}이 짖습니다.`)
+                console.log(`${this.name}이 짖습니다.`)  //위와 같은 뜻임, 일반함수는 this를 바인딩해준다 , this 바인딩 : this를 현재 객체와 연결하는 행위
+            },
+            sleep:() =>{    //메소드 
+                console.log(`${dog.name}이 잡니다`) //화살표함수에는 this가 연결되지 않음 , === 화살표 함수는 this를 바인딩 안한다
+            }
+        }
+        dog.bark()
+        dog.sleep()
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
