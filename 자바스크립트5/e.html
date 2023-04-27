@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            //여러개의 태그를 잡고 싶을때
+            for(const element of document.querySelectorAll('input')){
+                element.style.backgroundColor = 'red'
+            }
+        //     // 태그 선택자
+        // document.querySelector('h1').style.color = 'red' //h1이라는 태그를 찾아서(querySelector('h1') 그것의 스타일에서 칼라를 빨강으로 해라라는 뜻임)
+        // //아이디(id) 선택자
+        // document.querySelector('#header').style.backgroundColor = 'orange'
+        // //클래스(class) 선택자
+        // document.querySelector('.center.head').style.textAlign = 'center'
+        // //속성 선택자
+        // document.querySelector('[type=text]').style.borderRadius = '10px'
+        // //후손 선택자
+        // document.querySelector('body input').style.backgroundColor = 'skyblue' //body input은 body태그안에 input태그를 모두 잡아라 라는 뜼
+        })
+    </script>
+</head>
+<body>
+    <h1>hello</h1>
+    <h1 id = "header"> fuck you </h1>
+    <h1 class="center head">taejun</h1>
+
+    <input type="text">
+</body>
+</html>

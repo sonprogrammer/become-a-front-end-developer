@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //객체 기본값을 지정하는 내용
+        const test = function(name, age, color, status = '이상없음'){ // status를 옆에 처럼 기본값을 지정해놓으면 console 출력하는 줄에서 기입하지 않아도 자동으로 이상없음이 출력됨
+            return `${name} : ${age} : ${color}`
+        }
+        console.log(test('cloud', 7, 'brown'))  //위 코보다 아래 코드가 훨씬 더 좋다
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        const test1 = function(object){
+            // object = { stauts: '이상없음', ...object} 방법 1
+            fun = function({name, age, color, stauts = '이상없음'}){    //방법 2
+            return `${object.name} : ${object.age} : ${object.color}`
+            }
+        }
+
+
+        console.log(test1({ //이 방법이 더 better! 나중에 봤을때 이해하기 쉽다 
+            name:'cloud',
+            age: 7,
+            color:'brown'
+        }))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

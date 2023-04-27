@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> lodash라는 라이브러리 활용 이거로 거기에 있는거 쓸수 있음
+    <script>
+        const books = [{
+            name: '혼자 공부하는 파이썬',
+            price: 18000,
+            publisher: 'ra'
+        },{
+            name: 'HTML 입문',
+            price: 26000,
+            publisher: 'ba'
+        },{
+            name: '머신러닝 딥러닝 개발 입문',
+            price: 30000,
+            publisher: 'ca'
+        },{
+            name: '딥러닝을 위한 수학',
+            price: 25000,
+            publisher: 'da'
+        }]
+        const output  =  _.sortBy(books, ['price']) //_이건 객체이다 _이거라는 객체에 sortBy라는 메서드가 있고 그걸 호출하는 코드이다 ==> 최종적으로 price가격순으로 오름차순정리된다
+        console.log(output)
+        //만약 출판사 별로 출력을 한다음에 가격순 정렬하고 싶으면 아래와 같이 하면됨
+        const newoutput = _.sortBy(books, ['publisher', 'price'])
+        console.log(newoutput)
+
+        const output = _.orderBy(books, ['name'],['asc'])
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
