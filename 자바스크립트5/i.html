@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script> -->
+        <!-- // document.addEventListener('DOMContentLoaded', () =>{
+        //     const header = document.createElement('h1')
+        //     document.body.appendChild(header)
+ 
+        //     let count = 0
+        //     header.style.userSelect = 'none'    //더블 클릭하면 선택되는거 없애줌
+        //     header.textContent = `${count} clicked`
+        //     header.addEventListener('click', () =>{
+        //         count++
+        //     header.textContent = `${count} clicked`})
+        // }) -->
+        <!-- </script> -->
+</head>
+<body>
+    <script>
+    const counter = 0
+    const listener =()=>{
+        header.innerText = `${++counter} clicked`
+    }
+    const header = document.createElement('h1')
+    header.innerText = `0 clicked`
+    
+    const p = document.createElement('p')
+    p.innerText = `connecting status: disconnect`
+    
+    const connectButton = document.createElement('button')
+    connectButton.innerText = 'connect button'
+    connectButton.addEventListener('click', () =>{
+        header.addEventListener('click', listener)
+        p.innerText = `connecting status: connect`
+    })
+    
+    const disconnectButton = document.createElement('button')
+    disconnectButton.innerText = 'disconnect button'
+    connectButton.addEventListener('click', () =>{
+        header.removeEventListener('click', listener)
+        p.innerText = `connecting status: disconnect`
+    })
+    
+    document.body.appendChild(header)
+    document.body.appendChild(connectButton)
+    document.body.appendChild(disconnectButton)
+    document.body.appendChild(p)
+    </script>
+    
+</body>
+</html>

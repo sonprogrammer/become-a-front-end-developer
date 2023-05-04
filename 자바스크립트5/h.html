@@ -6,21 +6,49 @@
     <title>Document</title>
     <script>
         document.addEventListener('DOMContentLoaded', () =>{
-            const header = document.createElement('h1')
-            header.textContent = 'createElement로 만든 태그'
-            header.style.color = 'red'
+            const header = document.createElement('h2') 
+            header.textContent = '안녕하세요'
+            const first = document.querySelector('.first')
+            const second = document.querySelector('.second')
+            // first.appendChild(header)   //first에다가 header를 붙인다 --> 그럼 first안에 h1태그에있는 내용 밑에 header.textContent로 추가한 안녕하세요가 그 밑에 붙는다
+            // setTimeout(() =>{
+            //     second.appendChild(header)
+            // },2000)
+            const toFirst = () =>{
+                first.appendChild(header)
+                setTimeout(toSecond, 2000)
+            }
+            const toSecond = () =>{
+                second.appendChild(header)
+                setTimeout(toFirst, 2000)
+            }
+            toFirst()
 
-            const body = document.querySelector('body')
-            body.appendChild(header)
+            
+        })
+        // document.addEventListener('DOMContentLoaded', () =>{
+        //     const header = document.createElement('h1')
+        //     header.textContent = 'createElement로 만든 태그'
+        //     header.style.color = 'red'
 
-            setTimeout(()=>{
-                //문서 객체 제거하기
-                body.removeChild(header)
-            }, 2000)
-        })  
+        //     const body = document.querySelector('body')
+        //     body.appendChild(header)
+
+        //     setTimeout(()=>{
+        //         //문서 객체 제거하기
+        //         body.removeChild(header)
+        //         header.parentNode.removeChild(header)
+        //     }, 2000)
+        // })  
     </script>
 </head>
 <body>
-    
+    <div class="first">
+        <h1>first div tag</h1>
+    </div>
+    <hr>
+    <div class="second">
+        <h1>second div tag</h1>
+    </div>
 </body>
 </html>
