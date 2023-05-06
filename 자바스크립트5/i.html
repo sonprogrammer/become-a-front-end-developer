@@ -20,11 +20,13 @@
 </head>
 <body>
     <script>
-    const counter = 0
+    let counter = 0
     const listener =()=>{
         header.innerText = `${++counter} clicked`
     }
+    
     const header = document.createElement('h1')
+    header.style.userSelect = 'none'
     header.innerText = `0 clicked`
     
     const p = document.createElement('p')
@@ -36,10 +38,10 @@
         header.addEventListener('click', listener)
         p.innerText = `connecting status: connect`
     })
-    
+       
     const disconnectButton = document.createElement('button')
     disconnectButton.innerText = 'disconnect button'
-    connectButton.addEventListener('click', () =>{
+    disconnectButton.addEventListener('click', () =>{
         header.removeEventListener('click', listener)
         p.innerText = `connecting status: disconnect`
     })

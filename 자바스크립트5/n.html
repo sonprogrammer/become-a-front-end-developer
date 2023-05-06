@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form =  document.querySelector('form')
+            form.addEventListener('submit', (event) =>{
+                const text = document.querySelector('input[type=text]')
+                if(text.value.indexOf('@') >= 0) {
+                    alert('정상적으로 제출합니다')
+                }else{
+                    alert('입력양식을 확인해주세요')
+                    event.preventDefault()
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="">
+
+        이메일을 형식을 입력하세요<br>
+        <input type="text" name="test" id="">
+        <input type="submit" value="글자">
+
+    </form>
+</body>
+</html>
