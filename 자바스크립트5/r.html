@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            const checkbox = document.querySelector('input[type=checkbox') //input[type=checkbox뜻은 input중 type이 checkbox인애를 선택하는 것이다
+            const checkboxResult = document.querySelector('h1#checkbox')
+            checkbox.addEventListener('change',()=>{
+                if(checkbox.checked){   //checkbox.checked의미는 checkbox에 체크가 되어있으면(checked)밑에를 실행해라
+                    checkboxResult.textContent = '체크'
+                }else{
+                    checkboxResult.textContent = '해제'
+                }
+            })
+
+            const radio = document.querySelectorAll('input[type=radio][name=gender]') //input중 type이 radio인 애중에서 name이 gender인애를 데리고 오는것 추가로 이것은 여러개이기 때문에 querySelectorAll을 사용하였다 
+            const radioResult = document.querySelector('h1#radio')
+            radio.forEach((radio) =>{
+                radio.addEventListener('change',(event)=>{
+                    radioResult.textContent = event.currentTarget.value //radio버튼을 선택했을 때 선택된 것의 값을(event.currentTarget.value) textContent에 출력하는 것이다
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- 어떤 대상의 true 또는 false속성을 나타낼때 사용 -->
+    <input type="checkbox" name="">
+    <h1 id="checkbox"></h1>
+
+    <!-- 여러 대상중에서 하나를 선택할때 사용 -->
+    <input type="radio" name="gender" value="여성">여성 <br>
+    <input type="radio" name="gender" value="남성">남성 <br>
+    <input type="radio" name="gender" value="직접 지정">직접 지정 <br>
+    <h1 id="radio"></h1>
+
+</body>
+</html>

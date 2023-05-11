@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const select = document.querySelector('select')
+            const p = document.querySelector('p')
+            select.addEventListener('change', (event)=>{
+                const options = event.currentTarget.options
+                const index = options.selectedIndex
+                const list = []
+                for (const option of options) {
+                    if(option.selected){
+                        list.push(option.textContent)
+                    }
+                }
+                p.textContent = `선택: ${list.join(',')}`
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <select name="" id="" multiple> <!--multiple은 여러개 선택하게 해줌 다만 여러개 선택해도 마지막 선택된것만 선택된다-->
+        <option value="">apple</option>
+        <option value="">orange</option>
+        <option value="">grape</option>
+        <option value="">banana</option>
+    </select>
+    <p>select:</p>
+
+</body>
+</html>

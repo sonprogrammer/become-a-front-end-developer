@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            let seconds = 0
+            let timerId = 0
+            const checkbox = document.querySelector('input[type=checkbox') //input[type=checkbox뜻은 input중 type이 checkbox인애를 선택하는 것이다
+            const checkboxResult = document.querySelector('h1#checkbox')
+            checkbox.addEventListener('change',()=>{
+                document.body.style.backgroundColor='red'
+                if(checkbox.checked){   //checkbox.checked의미는 checkbox에 체크가 되어있으면(checked)밑에를 실행해라
+                    document.body.style.backgroundColor='red'
+                    timerId = setInterval(()=> {    //setInterval함수로 지정해준시간(여기선 내가 1초로해놈)마다 콜백함수를 실행하게 함->매초마다 시간이 바뀜
+                        seconds += 1
+                        checkboxResult.textContent = `${seconds}second`
+                    },1000)
+                }else{
+                    document.body.style.backgroundColor='gold'
+                    clearInterval(timerId)
+                }
+        })
+    })
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="" id="">timer active <br>
+    <h1 id="checkbox">0초</h1>
+</body>
+</html>
