@@ -1,0 +1,15 @@
+#JSON
+JavaScript Object Notation
+
+{
+    "color": "red",
+    "message": "hello!"
+}
+
+#규정
+1. 키는 문자열만
+2. 문자열은 반드시 큰따음표
+
+#JSON 객체
+JSON.stringfy(): 자바스크립트 객체 -> JSON 문자열
+JSON.parse(): JSON 문자열 -> 자바스크립트 객체

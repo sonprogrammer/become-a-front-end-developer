@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const load = ()=>{
+            const data = localStorage.getItem('application')
+            if(data !== null){
+                const [color, message] = data.split(',')
+                return {
+                    color: color,
+                    message: message
+                }
+            }else{
+                return{
+                    color: 'red',
+                    message: ''
+                }
+            }
+        }
+        const save = (data) =>{
+            
+            localStorage.setItem('application', `${data.color}, ${data.message}`)
+        }
+
+        document.addEventListener('DOMContentLoaded', () =>{
+            // localStorage.getItem('키')  //특정한 키로 값을 꺼낼때 사용, get이 가져오는거니깐
+            // localStorage.setItem('키', '값')  //특정한 키로 특정한 값을 저장할 때 사용, set이 저장하는 거니깐
+            // localStorage.removeItem('키')   //특정키로 어떠한 아이템을 제거할때 사용 
+            // localStorage.clear()    //전체 제거할 때 사용
+            const p = document.querySelector('p')
+            const button = document.querySelector('button')
+            const input = document.querySelector('input')
+            const select = document.querySelector('select')
+
+            const value1 = localStorage.getItem('key')
+            const color = localStorage.getItem('color')
+            //초기 설정
+            const data = load()
+            p.textContent = `이전 실행 때의 마지막 값: ${data.message}`
+            input.value = value1
+            document.body.style.backgroundColor = data.color
+            select.value = data.color
+            
+            //이벤트 연결
+            button.addEventListener('click', () =>{
+                //저장된 것 모두 제거
+                // localStorage.clear()
+                //데이터를 모두 지우고,
+                data.color = 'red'
+                data.message = ''
+                save(data)
+                //입력양식 초기화
+                input.value = ''
+                select.value = 'red'
+            })
+            input.addEventListener('keyup', ()=>{
+                //입력 양식 내부의 값을 저장
+                // localStorage.setItem('key', input.value)
+                data.message = input.value
+                save(data)
+                
+            })
+            select.addEventListener('change', ()=>{
+                const color = select.options[select.selectedIndex].value
+                //입력 양식 반영
+                document.body.style.backgroundColor = color
+                // localStorage.setItem('color', color)
+                //데이터를 저장
+                data.color = color
+                save(data)
+            })
+        })
+    </script>
+</head>
+<body>
+    <p></p>
+    <button>clear</button>
+    <input type="text" name="" id="">
+    <!-- 드롭다운 -> 옵션: 색상 -> 페이지 배경색상변경 -> 저장됨 -->
+    <select name="" id="">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+    </select>
+</body>
+</html>

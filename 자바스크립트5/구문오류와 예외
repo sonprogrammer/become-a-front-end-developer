@@ -1,0 +1,19 @@
+1. 프로그램 실행 전 발생하는 오류(실행을 해도 안됨)
+구문오류(Syntax error)->괄호를 안닫았거나 따음표등의 문제로 발생하는 오류
+ex) console.log("hi")
+    console.log("hi")
+    console.log("hi")
+    console.log("hi"
+    -->아예 실행안됨 Syntax error
+
+1. 프로그램 실행 중에 발생하는 오류(실행하면 실행은 되는데 오류 뜸)
+런타임 오류 + 예외(exception)
+
+ex) console.log("hi")
+    console.log("hi")
+    console.log("hi")
+    console.rog("hi")
+    -->실행 되는데 마지막 rog때문에 오류 발생
+
+
+ex) console.rog("hi") ->예외 -typeerror
