@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // document.addEventListener('DOMContentLoaded', ()=>{
+        
+        //예외 처리 많이 사용되는 이유
+        //1. 다른사람이 강제로 발생시킨 예외를 처리하는 경우
+        //2. 없는 속성에 접근해서 활용하는 경우 
+        //     const ex = () =>{
+        //     try{
+        //         console.log('예외가 발생할 가능성이 있는 코드')
+        //     }catch(에외_객체){
+        //         console.log('예외가 발생할 때 실행할 코드')
+        //     }finally{
+        //         console.log('무조건적으로 실행할 코드')
+        //     }
+        // }
+        // ex()
+        // })
+        const getPerimeter = (r) =>{
+            if(r < 0){
+                throw '길이는 음수가 될수 없습니다'
+            }
+            const pi = 3.14
+            return 2 * pi * r 
+        }
+
+        try{
+        console.log(getPerimeter(10))
+        }catch(e){
+            console.log('어떤 문제가 발생했습니다')
+        }
+            console.log('프로그램이 정상적으로 종료되었습니다')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

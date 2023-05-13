@@ -1,0 +1,52 @@
+<script>
+    //Rectangle처럼 자신의 기능을 주기만 하는 객체를 부모 클래스or 슈퍼클래스라고 한다 
+    class Rectangle{    //직사각형
+        constructor(width, height){
+            this.width = width
+            this.height = height
+        }
+
+        getArea(){
+            return this.width * this.height
+        }
+        getPerimeter(){
+            return 2 *(this.width + this.height)
+        }
+    }
+
+
+    // class Square{   //정사각형
+    //     constructor(width){
+    //         this.width = width
+    //     }
+
+    //     getArea(){
+    //         return this.width * this.width
+    //     }
+    //     getPerimeter(){
+    //         return 4 *this.width
+    //     }
+    // }
+
+    //복붙 === 재사용, 재사용을 쉽게 해주는 기능 ===> 상속
+
+    //다른클래스의 모든 것을 전달 받는 클래스를 자식클래스 or 서브클래스라고 한다 , 부모의 모든 속성과 메서드가 자식에 붙여진다고 생각하면 됨 
+    class Square extends Rectangle{  //Square클래스가 Rectangel클래스와 완전히 동일한 클래스가 되낟
+        constructor(width){         //변경내용 입력
+            super(width, width) //이클래스가 부모를 상속 받아서 만들어졌다는 걸 나타내기 위해서 생성자를 추가적으로 정의할때는 앞쪽에 super()라는 함수를 호출하게 한다, super는 부모의 생성자를 의미함
+            // this.width = width
+            // this.height = width
+        }
+    }   
+        
+
+
+
+    const rect = new Rectangle(200, 110)
+    console.log(`넓이는 ${rect.getArea()}`)
+    console.log(`둘레는 ${rect.getPerimeter()}`)
+
+    const square = new Square(30)
+    console.log(`넓이는 ${square.getArea()}`)
+    console.log(`둘레는 ${square.getPerimeter()}`)
+</script>

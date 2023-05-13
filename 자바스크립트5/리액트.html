@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script> <!--리액트 코어 부분-->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>   
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    const 콘텐츠 = '안녕하세요'
+    const 속성 = 'http://placedog.net/400/200'
+    const 스타일 ={
+        backgroundColor: 'yellow'
+        
+    }
+    const 배열 = [<li>사과</li>, <li>오렌지</li>, <li>바나나</li>]
+    const 이벤트_핸들러 = (event)=>{alert('클릭했습니다!')}
+
+    const 컴포넌트 = <div onClick={이벤트_핸들러}>
+        <h1 style={스타일}>{콘텐츠}</h1>
+        <img src = {속성} />
+        <ul>{배열}</ul>
+    </div>
+
+    // const 컴포넌트 = <h1>hello world</h1> // 자바스크립트에서는 const 컨테이너 = document.createElement('h1') 컨테이너.textContent = 'hello world' 이런식으로 해서 사용했음
+    //컴포넌트 만들 때 규칙
+    //<img>태그 처럼 시작 태그만 있고 닫는 태그가 없는건 꼭 <img />이런식으로 사용해야한다
+    //한 컴포넌트에 한태그만 사용가능 두개이상 사용하고 싶으면 div 태그로 감싸도됨 
+    const 컨테이너 = document.querySelector('#root')
+
+
+
+
+        ReactDOM.render(컴포넌트, 컨테이너)
+    </script>
+</body>
+</html>

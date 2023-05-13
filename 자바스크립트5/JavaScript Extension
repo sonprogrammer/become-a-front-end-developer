@@ -1,0 +1,8 @@
+JavaScript Extension
+> 자바스크립트 확장 문법
+    const 컨테이너 = document.querySelector('#root')
+    const 컴포넌트 = <h1>hello world</h1>
+    ReactDOM.render(컴포넌트, 컨테이너)
+
+코드를 바벨이라는 프로그램에 넣게 되면
+-> 자바스크립트로 변환해서 웹브라우저에서 사용 가능

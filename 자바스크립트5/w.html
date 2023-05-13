@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const h1 = document.querySelector('h1')
+            // if(h1 === null){
+            //     console.log('error')
+            // }else{
+            //     h1.textContent = 'change'
+            // }
+            try{
+                //예외가 발생할 가능성이 있는 코드
+                h1.textContent = 'change'
+            }catch(error){  //error 자리는 예외객체이다
+                //예외가 발생했을 때 실행할 코드
+                console.log('error')
+            } finally{
+                //무조건적으로 실행되는 코드
+            }
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

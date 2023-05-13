@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //정사각형을 나타내는 객체
+        class Square{
+
+            //private 속성: 클래스 내부에서만 접근 가능한 속성
+            #length //앞에 #을 붙이면 length에 접근못하게한다 , 클래스 내부에서만 사용 가능
+
+
+            constructor(length){
+            if(length < 0){
+                throw '길이는 0이상 이어야한다.'
+            }
+            this.#length = length
+        }
+        getArea(){  //getArea메서드,면적
+            return this.#length * this.#length
+        }
+        getPerimeter(){     //getPerimeter메서드,둘레
+            return this.#length * 4
+        }
+
+        set length(length){  //매개변수를 length로 받는다
+            if(length < 0){throw '길이는 0이상 이어야한다.'}    //if값이면 throw를 출력해라(실수를 방지하기 위해서 )
+            this.#length = length
+        }
+        getLength(){    //이거 또한 get length로 바꿀수 있다 
+            return this.#length
+        }
+    }
+
+        //private 하게 해준 length는 밖에서 못고치지만 get,set함수를 이용하여 바꾸고 확인할수 있다
+        const square = new Square(10)
+        console.log(square.getArea())   // 100나옴
+        console.log(square.getPerimeter())  //40나옴
+
+        // square.#length = -10 //--> 오류 뜸
+        // console.log(square.getArea())  
+        // console.log(square.getPerimeter()) 
+
+        console.log(square.getLength()) //length 값은 10임
+        // square.setLenght(20)    //set메서드를 이용하여 변경되지 않는 length를 변경할 수 있다, 위 메서드가 setLength일때만
+        square.length = 20      //square.setLenght(20)와 같다 대신 위에 메서드가 set length일 때만!
+        console.log(square.getLength())        //get메서드를 이용하여 한변의 길이를 추출하여 확인 가능, length 값이 20으로 변경됨
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

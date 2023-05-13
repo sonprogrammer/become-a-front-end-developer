@@ -1,0 +1,16 @@
+<script>
+    //private메서드
+    class Square{
+        #a
+        #test(){
+            console.log('private test() 메서드이다.')
+        }
+
+        constructor(){
+            this.#test()
+        }
+    }
+
+    const square = new Square()
+    square.#test()  //오류 뜸
+</script>

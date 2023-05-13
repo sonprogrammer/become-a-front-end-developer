@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //만들어진 square객체의 개수를 알고 싶을 때
+
+        class Square{
+            static count = 0    //static을 사용하면 Square에 '.'을 찍고 사용할 수 있게 된다 
+            static text() { //static 메서드
+
+            }
+            constructor(length){
+                Square.count += 1
+            }
+        }
+
+        // Square.count = 0 ==> 클래스 안에 들어가짐
+        // Square.text = function(){
+
+        // }
+        Square.text()
+
+        console.log(Square.count)
+        new Square()
+        new Square()
+        new Square()
+        console.log(Square.count)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
