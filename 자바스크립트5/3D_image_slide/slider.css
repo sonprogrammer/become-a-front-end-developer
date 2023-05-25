@@ -1,0 +1,162 @@
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background-color: skyblue;
+    }
+
+    button:focus{
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      background-color: lightsteelblue;
+      padding: 12px 20px;
+    }
+    .navbar i{
+      color: DarkGreen;
+    }
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
+
+    .UI-container{
+      width: 100%;
+      /* 야매로 수직 중앙 정렬 맞춤 */
+      position: absolute;
+      top: 35%;
+      overflow: hidden;
+    }
+
+    .menu{
+      width: 100%;
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* 추가사항 */
+    .list{
+        height: 200px;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        width: 330px;
+        z-index: 0;
+        border-radius: 15px;
+        background-size: contain;
+    }
+
+    .board{
+        left: 15%;
+        opacity: .4;
+        transform: translateX(-50%);
+
+    }
+
+    .Map, .timetable{
+        height: 250px;
+        opacity: 0.8;
+        width: 380px;
+        z-index: 1;
+    }
+
+    .Map{
+        left: 30%;
+        transform: translateX(-50%);
+    }
+    .timetable{
+        box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
+        height: 300px;
+        opacity: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 430px;
+        z-index: 2;
+    }
+
+    .menu li{
+      display: flex;
+      width: 200px;
+      height: 200px;
+      font-size: 40px;
+      align-items: center;
+      justify-content:space-around; /*이거도 야매로 맞춤*/
+      /* padding: 8px 12px; */
+      background-color: blue;
+      border-radius: 100%;
+      transition: transform 0.2s ease-in-out;
+
+    }
+
+    .menu li:hover {
+      background-color: blueviolet;
+      border-radius: 50%;
+      transform: scale(1.05);
+      /*//밑에는 마우스 위에 올리면 360도 회전시키는 모션*/
+      /*transform: rotate(360deg);*/
+      /*transform-origin: left top;*/
+      transform: rotateX(180deg);
+    }
+
+
+    .menu a:hover{
+      color: red;
+    }
+
+    .under_logo{
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      list-style: none;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgb(103, 103, 243);
+    }
+    .underbar li{
+      color: white;
+      margin-right: 10px;
+      padding: 12px 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+
+    @media screen and (max-width: 1000px){
+      .navbar{
+        flex-direction: row;
+      }
+      /* 야매로 맞춤 */
+      .UI-container{
+        position: relative;
+
+      }
+      .menu {
+        flex-direction: column;
+      }
+      .menu li{
+        margin-top: 25px;
+      }
+    }
+
+    @media screen and (max-height: 500px){
+      .UI-container{
+        margin-top: 50px;
+        margin-bottom: 100px;
+      }
+    }
