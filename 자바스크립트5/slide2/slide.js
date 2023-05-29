@@ -1,7 +1,7 @@
 const menuContainer = document.querySelector('.menu')
 const menuControlsContainer = document.querySelector('.menu-controls')
 const menuControls = ['previous', 'next']
-const menuItems = document.querySelectorAll('menu1')
+const menuItems = document.querySelectorAll('.menu1')
 
 class project{
     constructor(container, items, controls){
@@ -16,7 +16,7 @@ class project{
             el.classList.remove('Map')
             el.classList.remove('timetable')
         })
-        this.projectArray.slice(0, 5).forEach((el, i) =>{
+        this.projectArray.slice(0, 3).forEach((el, i) =>{
             el.classList.add(`item-${i+1}`)
         })
     }

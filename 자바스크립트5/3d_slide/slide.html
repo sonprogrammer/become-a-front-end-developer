@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한서대 교내버스</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="slide.css">
+   
+
+  </head>
+
+  <body>
+
+
+      <!-- 상단 바 -->
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="mainpage.html">
+            <i class="fa-solid fa-bus"></i>
+        <a  href="#">한서 교내버스</a>
+      </a>
+    </div>
+    <a id="admin-btn" >관리자</a>
+  </nav>
+
+
+  <!-- 각 기능 -->
+  <section id="tranding">
+      <div class="container">
+          <h3 class="text-center section-subheading" style="font-size: 37px;">Let's take a SchoolBus 🚌 ~~</h3>
+          <h1 class="text-center section-heading">function</h1>
+        </div>
+
+        <div class="container">
+            <div class="swiper tranding-slider">
+                <div class="swiper-wrapper">
+            <!-- Slide-start -->
+    
+            <!-- 지도 -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <a href="map_user.html">
+                <img src="img/map버튼에 쓸것.png" alt="function">
+                </a>
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="name" style="color: black;">
+                    Map
+                  </h2>
+            
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+
+
+            <!-- 시간표 -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                  <a href="timetable.html">
+                <img src="img/timetable로 쓸것.png" alt="function">
+                    </a>
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="name">
+                    Timetable
+                  </h2>
+
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+
+            <!-- 다른 기능 추가? -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                  <a href="board.html">
+                <img src="img/3.jpeg" alt="Tranding">
+                </a>
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="name">
+                    Board
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <script>
+
+        // 관리자 버튼 클릭 이벤트 처리
+      const adminBtn = document.getElementById('admin-btn');
+      
+      adminBtn.style.cursor = 'pointer';
+      adminBtn.addEventListener('click', () => {
+        const password = prompt('비밀번호를 입력하세요');
+        if (password === '1') {
+          alert('관리자 페이지로 이동합니다.');
+          window.location.href = '/map_manager'; // 비밀번호가 맞을 경우 페이지 이동
+        } else {
+          alert('비밀번호가 틀렸습니다.');
+        }
+      });
+      </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="slide.js"></script>
+  </body>
+
+</html>
