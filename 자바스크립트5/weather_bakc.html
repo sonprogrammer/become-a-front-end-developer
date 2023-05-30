@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>날씨에 따른 배경화면</title>
+  <style>
+    body {
+      background-color: skyblue;
+    }
+    .rainy {
+      background-image: url('rainy_background.jpg');
+    }
+    .snowy {
+      background-image: url('snowy_background.jpg');
+    }
+  </style>
+</head>
+<body>
+  <h1>날씨에 따른 배경화면</h1>
+  <script>
+    // OpenWeatherMap API 호출
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=YOUR_API_KEY')
+      .then(response => response.json())
+      .then(data => {
+        const weatherCode = data.weather[0].id;
+        const body = document.body;
+        
+        if (weatherCode >= 500 && weatherCode < 600) {
+          body.classList.add('rainy');
+        } else if (weatherCode >= 600 &&
