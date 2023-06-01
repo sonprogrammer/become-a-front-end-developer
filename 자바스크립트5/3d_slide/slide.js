@@ -19,3 +19,9 @@ var TrandingSlider = new Swiper('.tranding-slider', {
       prevEl: '.swiper-button-prev',
     }
   });
+
+function goToMap(){
+  window.location.href = '/map_user'
+}
+
+var Map = new goMap
