@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>시간표</title>
+  <link rel="stylesheet" href="practice.css">
+  <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
+  <style>
+    .bus-timetable {
+      position: relative;
+      display: inline-block;
+    }
+
+    .new-text-box {
+      position: absolute;
+      top: 75px;
+      right: 180px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      max-width: calc(100% - 40px);
+      overflow-wrap: break-word;
+      width: 250px; /* 원하는 너비로 조정합니다 */
+      height: 100px; /* 원하는 높이로 조정합니다 */
+    }
+
+    .overlay-content {
+      position: relative;
+      z-index: 1;
+      text-align: right;
+      text-indent: 20px;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar_logo">
+    <a href="/">
+      <a href="/" style="font-weight: bold">한서 교내버스</a>
+    </a>
+  </div>
+  <div class="menu-conatiner">
+    <ul class="menu">
+      <a class="map" href="/map_user">
+        <li style="font-weight: bold">Map</li>
+      </a>
+      <a class="Emergency" href="/board">
+      <li style="font-weight: bold">Emergency</li>
+      </a>
+    </ul>
+  </div>
+</nav>
+
+<h1>버스 시간표</h1>
+
+<div class="new-text-box">
+  <div class="overlay-content">
+    <td  th:text="${weather}"></td><br>
+    <td th:text="'현재온도: ' + ${temp} + '˚'"></td><br>
+    <td th:text="'강수량: ' + ${rainfall} + 'mm'"></td><br>
+    <td th:text=" '예상 지연시간: '+ ${time} + '분'"></td>
+  </div>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>출발 시각</th>
+    <th>도착 시각</th>
+    <th>알림</th>
+  </tr>
+  </thead>
+  <tbody style="font-weight: bold;">
+  <!--시간표 도착시간은 50분으로 짜놈-->
+  <!-- 알림받기 부분은 일단은 링크 대충 저렇게 걸어놈 -->
+  <tr>
+    <td>18 : 10</td>
+    <td>19 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
+  </tr>
+  <tr>
+    <td>18 : 10</td>
+    <td>19 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
+  </tr>
+  <tr>
+    <td>18 : 10</td>
+    <td>19 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
+  </tr>
+  <tr>
+    <td>16 : 10</td>
+    <td>17 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
+  </tr>
+  <tr>
+    <td>17 : 20</td>
+    <td>18 : 10</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
+  </tr>
+  <tr>
+    <td>18 : 10</td>
+    <td>19 : 00</td>
+    <td><a href="https://www.naver.com" target="_blacnk">알림 받기</a></td>
+  </tr>
+  </tbody>
+</table>
+<!--<nav class="underbar">-->
+<!--  <div class="under_logo">-->
+<!--    <li><i title="sonprogrammer" class="fa-brands fa-instagram"></i></li>-->
+<!--    <li><i title="010-3975-5037" class="fa-solid fa-phone"></i></li>-->
+<!--  </div>-->
+<!--</nav>-->
+</body>
+</html>
+
+
+
