@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
+    <script src="jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="weather">
+        <div class="CurrIcon"></div>
+        <div class="CurrTemp"></div>
+        <div class="City"></div>
+  </div>
+
+  <script type="text/javascript">
+ 
+    $(document).ready(function() {
+      let weatherIcon = {
+        '01' : 'fas fa-sun',
+        '02' : 'fas fa-cloud-sun',
+        '03' : 'fas fa-cloud',
+        '04' : 'fas fa-cloud-meatball',
+        '09' : 'fas fa-cloud-sun-rain',
+        '10' : 'fas fa-cloud-showers-heavy',
+        '11' : 'fas fa-poo-storm',
+        '13' : 'far fa-snowflake',
+        '50' : 'fas fa-smog'
+    };
+    
+    $.ajax({
+        
+    url : "http://api.openweathermap.org/data/2.5/weather?q="+'cheonan'+"&appid="+"c98216fdd5f29bb8103a673be31e42a9",
+ 
+    dataType:'json',
+    type:'GET',
+    success:function(data){
+      var $Icon = (data.weather[0].icon).substr(0,2);
+      var $Temp = Math.floor(data.main.temp - 273.15) + 'º';
+      var $city = data.name;
+ 
+      $('.CurrIcon').append('<i class="' + weatherIcon[$Icon] +'"></i>');
+      $('.CurrTemp').prepend($Temp);
+      $('.City').append($city);
+      }
+    })
+    });
+  </script>
+  
+
+
+</body>
+</html>

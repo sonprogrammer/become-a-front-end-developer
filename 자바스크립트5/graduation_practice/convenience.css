@@ -68,6 +68,7 @@ body{
    
 }
 .category{
+    margin-left: 60px;
     margin-right: 30px;
     /* position: relative;
     display: inline-block; */
@@ -75,13 +76,14 @@ body{
 
 .category{
     overflow: hidden;
-    display: inline-block;
-    transition: transform 0.3s ease;
+    /* display: inline-block; */
+    transition: transform 0.5s ease;
 }
 
 .category:hover{
     transform: scale(1.2);
 }
+
 
 /* .board_list{
     display: flex;
@@ -91,3 +93,21 @@ body{
 .everytime img{
     border-radius: 50%;
 }
+
+.board_list_wrap {
+    display: flex;
+  }
+  
+  .board_list_wrap .category {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .board_list_wrap img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+  }
+  

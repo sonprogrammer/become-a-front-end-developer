@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="https://kit.fontawesome.com/ccfae47948.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>편의 기능</title>
         <link rel="stylesheet" href="convenience.css">
@@ -58,6 +59,7 @@
         </nav>
         <div class="new-text-box">
             <div class="overlay-content">
+                <i id="weather-icon" class="fa-sharp fa-solid" style="width: 10px; height: 10px"></i>
                 <td th:text="${weather}"></td>
                 <br>
                 <td th:text="'현재온도: ' + ${temp} + 'º'"></td>
