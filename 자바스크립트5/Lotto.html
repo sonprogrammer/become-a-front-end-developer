@@ -71,39 +71,59 @@
           var delay = 100;
           var enableSound = true;
           
-          $("#get-numbers-button-open").click(function(){
-            $("#numbers-display").html("");
-            
-            if(enableSound)
-              playSound();
+   
 
-            var selectedNumbers = $("#selected-numbers").val().split(",");
-            
-            for(var z = 1; z <= $("#combinations").val(); z++) {
-              var numbers = [];
+        // 나머지 코드는 이전과 동일
 
-              for (var i = 0; i < ballsNumber; i++) {
-                if (selectedNumbers.length > i) {
-                  numbers.push(parseInt(selectedNumbers[i]));
-                } else {
-                  var number = Math.floor(Math.random() * maxNumber) + 1;
-                  var found = false;
-                  for (var j = 0; j < numbers.length; j++) {
-                    if (numbers[j] == number)
-                      found = true;
-                  }
-                  if (!found)
-                    numbers.push(number);
-                  else
-                    i--;
-                }
-              }
+        function generateRandomNumber(excludeArray, maxNumber) {
+    var randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+    while (excludeArray.indexOf(randomNumber) !== -1) {
+        randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+    }
+    return randomNumber;
+}
+$("#get-numbers-button-open").click(function(){
+    $("#numbers-display").html("");
+    
+    if(enableSound)
+        playSound();
 
-              numbers.sort(function sortNumber(a,b){
-                return a - b;
-              });
+    var selectedNumbers = $("#selected-numbers").val().split(",");
+    var randomNumbersCount = ballsNumber - selectedNumbers.length;
+    
+    for(var z = 1; z <= $("#combinations").val(); z++) {
+        var numbers = [];
 
-              var powerBall = Math.floor(Math.random() * maxPowerballNumber) + 1;
+        // 선택한 숫자를 배열에 추가합니다.
+        for (var i = 0; i < selectedNumbers.length; i++) {
+            if (selectedNumbers[i] !== "") {
+                numbers.push(parseInt(selectedNumbers[i], 10));
+            }
+        }
+        
+        // 남은 개수만큼 랜덤한 숫자를 생성하여 배열에 추가합니다.
+        for (var i = 0; i < randomNumbersCount; i++) {
+            var number = generateRandomNumber(numbers, maxNumber);
+            numbers.push(number);
+        }
+        
+        // 숫자가 더 필요한 경우, 추가로 랜덤한 숫자를 생성하여 배열에 추가합니다.
+        while (numbers.length < ballsNumber) {
+            var number = generateRandomNumber(numbers, maxNumber);
+            numbers.push(number);
+        }
+        
+        // 배열을 정렬합니다.
+        numbers.sort(function sortNumber(a, b) {
+            return a - b;
+        });
+
+        var powerBall = Math.floor(Math.random() * maxPowerballNumber) + 1;
+
+        // 나머지 코드는 이전과 동일
+
+        // 나머지 코드는 이전과 동일
+
 
               if(enableAnimation) {
                 $("#numbers-display").append('<b class="hidden-combination" id="combination' + z + '">' + z + '</b>');
