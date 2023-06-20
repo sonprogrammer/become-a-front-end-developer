@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="/tmap사용/jquery-3.6.4.min.js"></script>
+
+        <title>Lotto</title>
+        <style>
+          *{
+            /* margin: 0; */
+            /* padding: 0; */
+            /* box-sizing: border-box; */
+          }
+            #get-numbers-button-open {
+                font-weight: bold;
+                font-size: 22px;
+                padding: 10px;
+                background: gold;
+                color: black;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+
+            #numbers-display {
+                margin-top: 20px;
+            }
+
+            body {
+                background-image: url("돈벼락.jpeg");
+                background-repeat: no-repeat;
+                /* background-size: cover; */
+                background-color: black;
+            }
+
+            .container{
+              display: flex;
+              align-items: center;
+
+            }
+            .info{
+              background-color: yellow;
+              display: flex;
+              align-items: center;
+              padding: 5px;
+              width: 140px;
+              height: 30px;
+              border: 2px solid black;
+              margin-left: 30px;
+            }
+            .info a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none;
+              color: black;
+              font-weight: bold;
+
+            }
+
+            .lotto-ball {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: radial-gradient(yellow, orange);
+                font-size: 22px;
+                font-weight: bold;
+                color: red;
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                float: left;
+                padding: 10px;
+            }
+
+            .power-ball {
+                background: radial-gradient(red, yellow);
+                color: white;
+            }
+
+            .hidden-ball,
+            .hidden-combination {
+                display: none;
+            }
+
+            .clear {
+                clear: both;
+            }
+        </style>
+    </head>
+
+    <body>
+      <div class="container">
+        <h3>
+            1등 로또 번호 생성기</h3>
+            <div class="info">
+        <a
+            href="https://www.fullayer.com/lottowinnumber/fo/lottowinnumberlist"
+            target="_blanck"
+            style="display: flex;">
+            회차별 당첨번호 조회</a>
+          </div>
+          </div>
+        <input id="get-numbers-button-open" type="button" value="번호 생성"/>
+        &nbsp;&nbsp;<b>생성할 라인 수:</b>&nbsp;<input id="combinations" type="text" value="5" size="2"/>
+        <br/>
+        <b>선택한 숫자:</b>&nbsp;<input id="selected-numbers" type="text"/>
+
+        <div id="numbers-display"></div>
+
+        <script src="jquery-2.1.4.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var maxNumber = 45;
+                var ballsNumber = 5;
+                var maxPowerballNumber = 45;
+                var enableAnimation = true;
+                var delay = 100;
+                var enableSound = true;
+
+                // 나머지 코드는 이전과 동일
+
+                function generateRandomNumber(excludeArray, maxNumber) {
+                    var randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+                    while (excludeArray.indexOf(randomNumber) !== -1) {
+                        randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+                    }
+                    return randomNumber;
+                }
+                $("#get-numbers-button-open").click(function () {
+                    $("#numbers-display").html("");
+
+                    if (enableSound) 
+                        playSound();
+                    
+                    var selectedNumbers = $("#selected-numbers")
+                        .val()
+                        .split(",");
+                    var randomNumbersCount = ballsNumber - selectedNumbers.length;
+
+                    for (var z = 1; z <= $("#combinations").val(); z++) {
+                        var numbers = [];
+
+                        // 선택한 숫자를 배열에 추가합니다.
+                        for (var i = 0; i < selectedNumbers.length; i++) {
+                            if (selectedNumbers[i] !== "") {
+                                numbers.push(parseInt(selectedNumbers[i], 10));
+                            }
+                        }
+
+                        // 남은 개수만큼 랜덤한 숫자를 생성하여 배열에 추가합니다.
+                        for (var i = 0; i < randomNumbersCount; i++) {
+                            var number = generateRandomNumber(numbers, maxNumber);
+                            numbers.push(number);
+                        }
+
+                        // 숫자가 더 필요한 경우, 추가로 랜덤한 숫자를 생성하여 배열에 추가합니다.
+                        while (numbers.length < ballsNumber) {
+                            var number = generateRandomNumber(numbers, maxNumber);
+                            numbers.push(number);
+                        }
+
+                        // 배열을 정렬합니다.
+                        numbers.sort(function sortNumber(a, b) {
+                            return a - b;
+                        });
+
+                        var powerBall = Math.floor(Math.random() * maxPowerballNumber) + 1;
+
+                        // 나머지 코드는 이전과 동일 나머지 코드는 이전과 동일
+
+                        if (enableAnimation) {
+                            $("#numbers-display").append(
+                                '<b class="hidden-combination" id="combination' + z + '">' + z + '</b>'
+                            );
+
+                            $.each(numbers, function (index, value) {
+                                $("#numbers-display").append(
+                                    '<div class="lotto-ball hidden-ball">' + value + '</div>'
+                                );
+                            });
+
+                            if (maxPowerballNumber) 
+                                $("#numbers-display").append(
+                                    '<div class="lotto-ball power-ball hidden-ball">' + powerBall + '</div>'
+                                );
+                            
+                            $(".hidden-ball").each(function (index, value) {
+                                $(this)
+                                    .delay(delay * index)
+                                    .fadeIn();
+                            });
+
+                            $("#combination" + z)
+                                .delay(delay * ballsNumber * z)
+                                .fadeIn();
+                        } else {
+                            $("#numbers-display").append('<b>' + z + '</b>');
+
+                            $.each(numbers, function (index, value) {
+                                $("#numbers-display").append(
+                                    '<div class="lotto-ball">' + value + '</div>'
+                                );
+                            });
+
+                            if (maxPowerballNumber) 
+                                $("#numbers-display").append(
+                                    '<div class="lotto-ball power-ball">' + powerBall + '</div>'
+                                );
+                            }
+                        
+                        $("#numbers-display").append('<div class="clear"></div>');
+                    }
+                });
+
+                function playSound() {
+                    var blop_audio = document.createElement("audio");
+                    blop_audio.setAttribute("src", "magic.mp3");
+                    blop_audio.play();
+                }
+            });
+        </script>
+    </body>
+
+</html>
