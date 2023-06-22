@@ -27,12 +27,44 @@
                 margin-top: 20px;
             }
 
-            body {
+            /* body {
                 background-image: url("돈벼락.jpeg");
                 background-repeat: no-repeat;
-                /* background-size: cover; */
+                background-size: cover;
                 background-color: black;
+            } */
+/* 여기서부터 */
+body {
+            background-color: whitesmoke;
+            overflow: hidden;
+        }
+
+        .money-container {
+            position: absolute;
+            top: -50px;
+            animation: moveMoney linear infinite;
+        }
+
+        .money {
+            width: 50px;
+            height: 50px;
+            background-image: url("money.jpeg");
+            background-size: cover;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        @keyframes moveMoney {
+            0% {
+                top: -50px;
+                opacity: 1;
             }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+        /* 여기까지 */
 
             .container{
               display: flex;
@@ -94,6 +126,7 @@
     </head>
 
     <body>
+    
       <div class="container">
         <h3>
             1등 로또 번호 생성기</h3>
@@ -111,6 +144,9 @@
         <b>선택한 숫자:</b>&nbsp;<input id="selected-numbers" type="text"/>
 
         <div id="numbers-display"></div>
+        <div class="money-container">
+            <div class="money"></div>
+        </div>
 
         <script src="jquery-2.1.4.min.js"></script>
         <script>
@@ -223,6 +259,18 @@
                     blop_audio.play();
                 }
             });
+            function createMoney() {
+            const moneyContainer = document.querySelector('.money-container');
+            const money = document.createElement('div');
+            money.className = 'money';
+            moneyContainer.appendChild(money);
+
+            setTimeout(() => {
+                money.remove();
+            }, 3000);
+        }
+
+        setInterval(createMoney, 500);
         </script>
     </body>
 
