@@ -55,11 +55,15 @@
 //     return a
 // }
 
+// function sol(a) {
 
-// function sol(hangul){
-//     return hangul[0] + hangul[2] + hangul[3]
+//     let ao = 'out'
+//     function add(x, y){
+//         let result = x + y
+//         return result
+//     }
+//     console.log(result)
+//     return add(a)
 // }
 
-fucn
-
-console.log(sol("가나다라마바사"))
+console.log(sol())
