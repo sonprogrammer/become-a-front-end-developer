@@ -37,4 +37,21 @@
 //     return answer;
 // }
 
-console.log(sol(3))
+// 노동요 엘리스
+// function sol(s){
+//     let answer = []
+//     for(let i = 0; i < s.length; i++){
+//         if(s[i] === ''){
+//             answer += '링디기디기\n'
+//         }else if(s[i] === '.'){
+//             answer += '딩딩딩\n'
+//         }else{
+//             answer += '링딩동 '
+//         }
+//     }
+//     return answer
+// }
+
+
+
+console.log(sol())
