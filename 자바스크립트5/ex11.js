@@ -74,4 +74,30 @@
 //     return {case1, case2, case3, case4}
 // }
 
-console.log(sol())
+
+// 변수 다루기
+// function sol(){
+
+//     let num = 123
+//     num +=204
+//     let str = 'he '
+//     str += 'elice!'
+//     return {num, str}
+// }
+
+// 소수의 합 구하기
+function sol(input){
+    let answer = []
+    let sum
+    for(let i = 1; i <= input; i++){
+        if(input % i == 0 && input % 2 != 0 ){
+            answer.push(i)
+        }
+        if(input == i){
+            sum += input
+        }
+    }
+    return answer
+}
+
+console.log(sol(9))
