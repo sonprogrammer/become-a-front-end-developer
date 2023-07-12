@@ -52,6 +52,26 @@
 //     return answer
 // }
 
+// 음식 가격 계산하기
+// function sol(){
+//     let korean = 6300
+//     let chiness = 6000
+//     let p = 8500
+//     return korean * 55 + chiness * 43 + p * 52;
+// }
 
+// 변수 비교하기
+// function sol(){
+//     let a = 10
+//     let b = 10
+    
+//     let case1 = (a ==b)
+//     let case2 = (a === b)
+//     b = "10"
+//     let case3 = (a == b)
+//     let case4 = (a ===b)
+
+//     return {case1, case2, case3, case4}
+// }
 
 console.log(sol())
