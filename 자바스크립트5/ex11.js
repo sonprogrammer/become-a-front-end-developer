@@ -2,7 +2,10 @@
 // function sol(input){
 //     let result = []
 //     for(let i = 1; i <= input; i++){
-//         if((i % 10) %3 == 0 && i % 10 != 0){
+//         if ((i % 10) % 3 == 0 && i % 10 != 0 && Math.floor(i / 10) % 3 == 0 && Math.floor(i / 10) != 0) {
+//             result.push("짝짝");
+//         }
+//         else if((i % 10) %3 == 0 && i % 10 != 0){
 //             result.push("짝")
 //         }else if((Math.floor(i/10) % 3 == 0 && Math.floor(i/10) != 0)){
 //             result.push("짝")
@@ -16,6 +19,8 @@
 //     return result
     
 // }
+
+// console.log(sol(77))
 
 // remind 약수 찾기
 // function sol(input){
@@ -88,16 +93,16 @@
 // 소수의 합 구하기
 function sol(input){
     let answer = []
-    let sum
+    let sum = 0;
     for(let i = 1; i <= input; i++){
-        if(input % i == 0 && input % 2 != 0 ){
+        if(input % i == 0){
             answer.push(i)
         }
-        if(input == i){
-            sum += input
-        }
+        sum += i
+   
+    
     }
-    return answer
+    return sum
 }
 
 console.log(sol(9))
