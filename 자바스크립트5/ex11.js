@@ -94,15 +94,19 @@
 function sol(input){
     let answer = []
     let sum = 0;
-    for(let i = 1; i <= input; i++){
-        if(input % i == 0){
+    for(let i = 2; i <= input; i++){
+        let isPrime = true;
+        for(let j= 2; j < i; j++){
+            if(i % j == 0){
+                isPrime = false
+                break
+            }
+        }
+        if(isPrime){
             answer.push(i)
         }
-        sum += i
-   
-    
     }
-    return sum
+    return answer
 }
 
 console.log(sol(9))
