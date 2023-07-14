@@ -96,10 +96,10 @@ function sol(input){
     let sum = 0;    //sum변수를 선언하고 초기화함 , 소수들의 합이 저장되는 변수
     for(let i = 2; i <= input; i++){    
         let isPrime = true  //i가 소수이면 true
-        for(let j = 2; j < i; j++){
+        for(let j = 2; j < i; j++){ //2부터 나누기 연산을 수행
             if(i % j == 0){     //i를 J로 나누어 나머지를 검사하여 나머지가 0이면 i는 소수가 아님 그러면 false로 설정후 반복문 종료
                 isPrime = false //위조건이 충족하면 소수 아님
-                break   //충족하면 반복문 종료
+                break   //충족하면 반복문 종료, 뒤로 가도 이미 여기서 나눠졌기 때문에 2개이상의 약수가 존재한다판단되기 때문 
             }
         }
         if(isPrime){    //isPrime이 트루이면 
@@ -110,7 +110,7 @@ function sol(input){
     return answer
     // return sum
 }
-
+console.log(sol(21));
 // function sol() {
 //     var sum = 0;
   
