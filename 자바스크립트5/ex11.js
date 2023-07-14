@@ -93,20 +93,39 @@
 // 소수의 합 구하기
 function sol(input){
     let answer = []
-    let sum = 0;
-    for(let i = 2; i <= input; i++){
-        let isPrime = true;
-        for(let j= 2; j < i; j++){
-            if(i % j == 0){
-                isPrime = false
-                break
+    let sum = 0;    //sum변수를 선언하고 초기화함 , 소수들의 합이 저장되는 변수
+    for(let i = 2; i <= input; i++){    
+        let isPrime = true  //i가 소수이면 true
+        for(let j = 2; j < i; j++){
+            if(i % j == 0){     //i를 J로 나누어 나머지를 검사하여 나머지가 0이면 i는 소수가 아님 그러면 false로 설정후 반복문 종료
+                isPrime = false //위조건이 충족하면 소수 아님
+                break   //충족하면 반복문 종료
             }
         }
-        if(isPrime){
+        if(isPrime){    //isPrime이 트루이면 
             answer.push(i)
+            sum += i    //sum변수에 i를 더한다
         }
     }
     return answer
+    // return sum
 }
 
-console.log(sol(9))
+// function sol() {
+//     var sum = 0;
+  
+//     for (var i = 1; i <= 200; i++) {
+//       for (var j = 2; j <= i; j++) {
+//         if (i % j == 0) {
+//           break;
+//         }
+//       }
+//       if (j == i) {
+//         sum += j;
+//       }
+//     }
+  
+//     return sum; 
+//   }
+console.log(sol(21))
+
