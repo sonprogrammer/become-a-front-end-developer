@@ -53,13 +53,34 @@
      
 // console.log(sol(333))
 
-function sol(input){
-    let answer = []
-    let a = input.split('')
-    answer.push(typeof(a))
-    answer.push(a[2])
-    return answer
 
+//7번(문자열 자르기)
+// function sol(input){
+//     let answer = []
+//     let a = input.split('')
+//     answer.push(typeof(a))
+//     answer.push(a[2])
+//     return answer
+
+// }
+
+// console.log(sol('hello youngjin'))
+
+
+// 8번 
+// function sol(str){
+//     let answer = str.split("500원")
+//     return answer
+// }
+
+
+
+// console.log(sol('500원 안녕 하세요 그리고 500원 은 난 아니다'))
+
+
+//9번
+function sol(a, b){
+    return a + b;
 }
 
-console.log(sol('hello youngjin'))
+console.log(sol(3, 12331))
