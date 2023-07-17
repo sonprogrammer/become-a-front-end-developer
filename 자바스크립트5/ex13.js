@@ -106,3 +106,46 @@
 
 // console.log(sol('나는 손영진 입니다......'))
 
+
+
+// 16번 - 음식가격 계산
+// function sol(){
+//     let answer = 0
+//     let korean = 6300
+//     let chinese = 6000
+//     let wester = 8500
+//     let total = korean * 55 + chinese * 43 + wester * 52
+//     return total
+// }
+
+// console.log(sol())
+
+
+
+// 17번 - 변수비교하기
+// function sol(){
+//     let a = 10 
+//     let b = 10
+//     case1 = (a == b)
+//     case2 = (a === b)
+
+//     b = "10"
+//     case3 = (a == b)
+//     case4 = (a === b)
+//     return {case1, case2, case3, case4}
+// }
+
+// console.log(sol())
+
+
+
+// 18번 - 변수다루기
+// function sol(num, string){
+//     num += 284
+//     string += "son"
+
+//     return {num, string}
+// }
+
+// console.log(sol(290, "영진"))
+
