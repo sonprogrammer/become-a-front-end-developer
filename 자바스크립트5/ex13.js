@@ -153,24 +153,49 @@
 
 // 19번 - 소수합구하기
 
+// function sol(input){
+//     let sum = 0;
+//     let answer = []
+//     for(let i = 2; i <= input; i++){
+//         let isPrime = true
+//         for(let j = 2; j < i; j++){
+//             if(i % j == 0){ //i가 소수가 아닌것찾는거임
+//                 isPrime = false
+//                 break;  //break하는 이유는 i에 대해서 j의 약수가 2개 이상이면 이미 i는 소수가 아니니깐 자원낭비할필요없다
+//             }
+//         }
+//         if(isPrime ===true){
+//             // sum += i
+//             answer.push(i)
+//         }
+//     }
+//     // return sum
+//     return answer
+// }
+
+// console.log(sol(13))
+
+
+
+
 function sol(input){
     let sum = 0;
-    let answer = []
     for(let i = 2; i <= input; i++){
-        let isPrime = true
+        let isPrime = true //isPrime이 true면 i는 소수인것
         for(let j = 2; j < i; j++){
-            if(i % j == 0){ //i가 소수가 아닌것찾는거임
-                isPrime = false
-                break;  //break하는 이유는 i에 대해서 j의 약수가 2개 이상이면 이미 i는 소수가 아니니깐 자원낭비할필요없다
+            if(i % j === 0){
+                isPrime = false //i는 소수가 아님
+                break;
             }
+            
         }
-        if(isPrime ===true){
-            // sum += i
-            answer.push(i)
+        if(isPrime === true){
+            sum += i
         }
     }
-    // return sum
-    return answer
+    return sum
 }
 
-console.log(sol(10))
+console.log(sol(5))
+
+
