@@ -178,24 +178,40 @@
 
 
 
-function sol(input){
-    let sum = 0;
-    for(let i = 2; i <= input; i++){
-        let isPrime = true //isPrime이 true면 i는 소수인것
-        for(let j = 2; j < i; j++){
-            if(i % j === 0){
-                isPrime = false //i는 소수가 아님
-                break;
-            }
+// function sol(input){
+//     let sum = 0;
+//     for(let i = 2; i <= input; i++){
+//         let isPrime = true //isPrime이 true면 i는 소수인것
+//         for(let j = 2; j < i; j++){
+//             if(i % j === 0){
+//                 isPrime = false //i는 소수가 아님
+//                 break;
+//             }
             
-        }
-        if(isPrime === true){
-            sum += i
+//         }
+//         if(isPrime === true){
+//             sum += i
+//         }
+//     }
+//     return sum
+// }
+
+// console.log(sol(5))
+
+
+
+function sol(input){
+    let answer = []
+    for(let i = 1; i <= input; i++){
+        if((i % 10) % 3 == 0 && i % 10 != 0){
+            answer.push("짝")
+        }else if(Math.floor((i / 10) % 3) == 0 && Math.floor(i / 10) != 0){ //십의자리가 3,6,9중 하나일때
+            answer.push("뿍")           
+        }else{
+            answer.push(i)
         }
     }
-    return sum
+    return answer
 }
 
-console.log(sol(5))
-
-
+console.log(sol(40))
