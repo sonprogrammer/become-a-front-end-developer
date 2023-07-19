@@ -38,18 +38,29 @@
 //   console.log("가장 큰 자릿수:", maxDigit);
 
 
-//가장 높은 숫자 자리 구하기
-function sol(input){
-    let numberString = String(input)    //input으로 받은 숫자를 문자열로 바꾸는 작업
-    let maxdigit = 0;
-    for(let i = 0; i < numberString.length; i++){
-        let digit = parseInt(numberString[i])            //parseInt는 문자열을 정수로 반환함
-        if(digit > maxdigit){
-            maxdigit = digit;
-        }
-    }
-    return maxdigit
+//가장 큰 숫자 구하기(2)
+// function sol(input){
+//     let numberString = String(input)    //input으로 받은 숫자를 문자열로 바꾸는 작업
+//     let maxdigit = 0;
+//     for(let i = 0; i < numberString.length; i++){
+//         let digit = parseInt(numberString[i])            //parseInt는 문자열을 정수로 반환함
+//         if(digit > maxdigit){    
+//             maxdigit = digit;
+//         }
+//     }
+//     return maxdigit
 
-}
+// }
 
-console.log(sol(12321))
+// console.log(sol(12321))
+
+
+// 가장 높은자리의 숫자 구하기
+// function sol(input){
+//     let numberString = String(input)
+//     let hight = numberString[0]
+
+//     return hight
+// }
+
+// console.log(sol(139304))
