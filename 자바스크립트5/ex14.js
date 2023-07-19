@@ -68,3 +68,31 @@
 // }
 
 // console.log(sol(139304))
+
+
+
+// 배수 판별하기
+// 아래처럼 else if가 아니라 if문으로 한 이유는 각 배수에 대한 조건을 서로 독립적으로 확인하고
+// 모든 해당 조건들을 answer배열에 추가해야하기 때문-->왜그러냐면 esle if를 쓰게 되면 나머지는 무시되고 실행이되지 않기 때문
+// function solution(num) {
+//     let answer = [];
+//     if(num % 2 == 0){
+//         answer.push("2의 배수입니다.")
+//     } if(num % 3 == 0){
+//         answer.push("3의 배수입니다.")
+//     } if(num % 5 == 0){
+//         answer.push("5의 배수입니다.")
+//         answer.join('\n')
+//     } if(num % 7 == 0){
+//         answer.push("7의 배수입니다.")
+//     }
+//     if(answer.length >= 2){ //다른 if문에서도 배수가 존재한다면 (2개 이상의 배수가 될수 있으니깐 예를 들어 10은 2, 5의 배수가 될수 있으니깐)
+//         return answer.join("\n")    //join 메소드로 2개이상이 들어가면 몇의 배수입니다.하고 다음줄에 몇의배수입니다가 출력됨
+//     }else{
+//         return answer;
+//     }
+//   }
+
+//   console.log(solution(10))
+
+
