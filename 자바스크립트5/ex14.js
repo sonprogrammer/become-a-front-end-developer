@@ -96,3 +96,29 @@
 //   console.log(solution(10))
 
 
+//중간값 출력하기
+// function solution(input) {
+//     let answer = []
+//     let num = input.split(" ")
+   
+//     answer.push(num[1])
+  
+//     return answer;
+//   }
+
+//   console.log(solution("1 2 3"))
+
+
+//중간값 출력하기 (2)
+function solution(input) {
+    let answer = []
+    let num = input.split(" ")
+
+    let middleIndex = Math.floor(num.length / 2) // 총길이가 3이면 3/2 = 1.5인데 math.floor(내림)으로 1이됨 --> 즉 인덱스 1의 값을말함
+    // answer.push(num[middleIndex])
+    answer = Number(num[middleIndex])
+  
+    return answer;
+  }
+
+  console.log(solution("1 7 3"))
