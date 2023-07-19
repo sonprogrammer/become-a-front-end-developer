@@ -42,9 +42,13 @@
 // function sol(input){
 //     let numberString = String(input)    //input으로 받은 숫자를 문자열로 바꾸는 작업
 //     let maxdigit = 0;
-//     for(let i = 0; i < numberString.length; i++){
-//         let digit = parseInt(numberString[i])            //parseInt는 문자열을 정수로 반환함
-//         if(digit > maxdigit){    
+//  //밑에를 예를들어 설명해보면 input값이 134이면 numberString.length는 3된다.i는 0부터돌고 numberString[0]값인 1이 처음에 가장 큰숫자로 갱신된다(여기서 Maxdigit은 처음 0으로 초기화되어있음)
+// // 그리고 i가 1이되면 numberString[1]인 3이되고 maxdigit에 갱신되어 저장된다
+// //그리고 i가 2가 되면 numberString[2]인 4가 되고 maxdigit에 갱신되어 저장되고 그 마지막값이니깐 그게 return됨
+
+//    for(let i = 0; i < numberString.length; i++){
+//         let digit = parseInt(numberString[i]) //parseInt는 문자열을 정수로 반환함, 
+//         if(digit > maxdigit){    //더 높은 숫자가 들어오면 maxdigit에 갱신되어 저장된다  
 //             maxdigit = digit;
 //         }
 //     }
