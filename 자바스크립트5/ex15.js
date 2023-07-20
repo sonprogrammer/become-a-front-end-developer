@@ -30,3 +30,16 @@
 
 
 // 주문내용 계산하기
+function sol(){
+    let americano = 3500
+    let cafe_latte = 3800;
+    let milk_tea = 4200
+
+    let price1 = americano * 2 + milk_tea
+    let price2 = (cafe_latte * 2 + milk_tea * 2) * 0.9
+
+    return price1 + price2
+
+}
+
+console.log(sol())
