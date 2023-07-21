@@ -92,14 +92,27 @@
 
 
 // 렌터카
-function sol(hour, price, defaultPrice, defaultHour, defaultCost){
-    let answer1 = hour * price;
-    let answer2 = defaultPrice + Math.max(0, Math.ceil((hour - defaultHour)/defaultCost) *defaultCost)
-
-    return Math.min(answer1, answer2)
-}
-
-console.log(sol(10, 300, 1500, 6, 200))
+function solution(hour, price, defaultPrice, defaultHour, defaultCost) {
+ 
+    let answer1 = 0;
+    let answer2 = 0;
+  
+    var H = hour; //엘리스 토끼가 이용할 시간
+    var A = price; //모자장수 렌터카의 시간당 비용 
+    var B = defaultPrice; //코더랜드 렌터카 기본요금
+    var C = defaultHour; //코더랜드 렌터카 기본시간
+    var D = defaultCost; //코더랜드 렌터카 기본시간 이후 시간당 부과 요금
+    answer1 = hour * price;
+    answer2 = defaultPrice + (defaultCost *(hour - defaultHour))
+    if(answer1 > answer2){
+        return answer2
+    }else{
+        return answer1
+    }
+      
+  }
+  console.log(solution(10, 300, 1500, 6, 200))
+  
 
 // console.log(sol())
 
