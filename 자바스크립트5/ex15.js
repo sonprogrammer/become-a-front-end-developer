@@ -83,8 +83,39 @@
 
 
 // 구슬 꾸러미
-function sol(input){
-    
+// function sol(input){
+
+// }
+
+// console.log(sol())
+
+
+
+// 렌터카
+function sol(hour, price, defaultPrice, defaultHour, defaultCost){
+    let answer1 = hour * price;
+    let answer2 = defaultPrice + Math.max(0, Math.ceil((hour - defaultHour)/defaultCost) *defaultCost)
+
+    return Math.min(answer1, answer2)
 }
 
-console.log(sol())
+console.log(sol(10, 300, 1500, 6, 200))
+
+// console.log(sol())
+
+
+// function minimumRentalCost(H, A, B, C, D) {
+//     const rentalCompanyA = H * A; // 모자장수 렌터카 비용 (1시간당 A 원)
+//     const rentalCompanyB = B + Math.max(0, Math.ceil((H - C) / D) * D); // 코더랜드 렌터카 비용
+  
+//     return Math.min(rentalCompanyA, rentalCompanyB);
+//   }
+  
+  // 예시 입력
+//   const H = 10; // 렌터카를 빌리는 시간 (10시간)
+//   const A = 5000; // 모자장수 렌터카 1시간당 요금 (5000원)
+//   const B = 10000; // 코더랜드 렌터카 기본 요금 (10000원)
+//   const C = 3; // 코더랜드 렌터카 기본 시간 (3시간)
+//   const D = 2000; // 코더랜드 렌터카 추가 요금 (1시간당 2000원)
+  
+//   console.log(minimumRentalCost(10, 5000, 10000, 3, 2000)); // 최소 비용값 출력
