@@ -61,21 +61,30 @@
 
 
 //1부터 N까지 합의 제곱구하고 각 제곱근의 합과 차를 구하기
-function sol(num){
-    let answer
-    let answer1
-    let count = 0
-    let count1 = 0;
-    for(let i = 1; i <= num; i++){
-        count += i
-    }
-    for(let j = 1; j <= num; j++){
-        count1 += j*j
-    }
-    answer = count * count  //1부터 num까지 합의 제곱한 값
+// function sol(num){
+//     let answer
+//     let answer1
+//     let count = 0
+//     let count1 = 0;
+//     for(let i = 1; i <= num; i++){
+//         count += i
+//     }
+//     for(let j = 1; j <= num; j++){
+//         count1 += j*j
+//     }
+//     answer = count * count  //1부터 num까지 합의 제곱한 값
 
-    answer1 = count1
-    return answer - answer1
+//     answer1 = count1
+//     return answer - answer1
+// }
+
+// console.log(sol(10))
+
+
+
+// 구슬 꾸러미
+function sol(input){
+    
 }
 
-console.log(sol(10))
+console.log(sol())
