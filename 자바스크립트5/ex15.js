@@ -92,26 +92,26 @@
 
 
 // 렌터카
-function solution(hour, price, defaultPrice, defaultHour, defaultCost) {
+// function solution(hour, price, defaultPrice, defaultHour, defaultCost) {
  
-    let answer1 = 0;
-    let answer2 = 0;
+//     let answer1 = 0;
+//     let answer2 = 0;
   
-    var H = hour; //엘리스 토끼가 이용할 시간
-    var A = price; //모자장수 렌터카의 시간당 비용 
-    var B = defaultPrice; //코더랜드 렌터카 기본요금
-    var C = defaultHour; //코더랜드 렌터카 기본시간
-    var D = defaultCost; //코더랜드 렌터카 기본시간 이후 시간당 부과 요금
-    answer1 = hour * price;
-    answer2 = defaultPrice + (defaultCost *(hour - defaultHour))
-    if(answer1 > answer2){
-        return answer2
-    }else{
-        return answer1
-    }
+//     var H = hour; //엘리스 토끼가 이용할 시간
+//     var A = price; //모자장수 렌터카의 시간당 비용 
+//     var B = defaultPrice; //코더랜드 렌터카 기본요금
+//     var C = defaultHour; //코더랜드 렌터카 기본시간
+//     var D = defaultCost; //코더랜드 렌터카 기본시간 이후 시간당 부과 요금
+//     answer1 = hour * price;
+//     answer2 = defaultPrice + (defaultCost *(hour - defaultHour))
+//     if(answer1 > answer2){
+//         return answer2
+//     }else{
+//         return answer1
+//     }
       
-  }
-  console.log(solution(10, 300, 1500, 6, 200))
+//   }
+//   console.log(solution(10, 300, 1500, 6, 200))
   
 
 // console.log(sol())
@@ -132,3 +132,21 @@ function solution(hour, price, defaultPrice, defaultHour, defaultCost) {
 //   const D = 2000; // 코더랜드 렌터카 추가 요금 (1시간당 2000원)
   
 //   console.log(minimumRentalCost(10, 5000, 10000, 3, 2000)); // 최소 비용값 출력
+
+
+// 별로 모양 만들기
+function sol(input){
+    let result = ''
+    for(let i = 1; i <= input; i++){
+        for(let j =0; j < i; j++){
+            result +="*"
+            if(j==5){
+                result += "\n"
+            }
+        }
+        result += "\n"
+    }
+    return result
+}
+
+console.log(sol())
