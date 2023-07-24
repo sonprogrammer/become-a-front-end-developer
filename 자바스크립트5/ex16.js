@@ -17,5 +17,15 @@
 
 //문자열 검사하기
 function sol(str){
-    
+    let result = ''
+    for(let i = 0; i < str.length / 2; i++){
+        if(str[i] === str[str.length - 1 - i]){ //-1을 하는 이유는 6번째 글자의 인덱스는 5기때문임 0번째 인덱스는 5번째 인덱스랑 비교하고 1번째 인덱스는 4번째 인덱스와 비교함
+            result += 'same\n'
+        }else{
+            result += 'different\n'
+        }
+    }
+    return result
 }
+
+console.log(sol('abcdba'))
