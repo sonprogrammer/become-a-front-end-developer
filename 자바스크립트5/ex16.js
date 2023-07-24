@@ -47,29 +47,42 @@
 // console.log(sol("아메리카노"))
 
 
-function calculateTotalPrice(orders) {
-    const menuPrices = {
-      "아메리카노": 4100,
-      "카페라떼": 4600,
-      "카라멜마끼야또": 5100,
-    };
+// function calculateTotalPrice(input) {
+//     const menuPrices = {
+//       "아메리카노": 4100,
+//       "카페라떼": 4600,
+//       "카라멜마끼야또": 5100,
+//     };
   
+//     let totalPrice = 0;
+  
+//     for (let i = 0; i < input.length; i++) {
+//       const order = input[i];
+//       if (menuPrices[order] !== undefined) {
+//         totalPrice += menuPrices[order];
+//       } else {
+//         console.log(`주문한 메뉴(${order})는 메뉴에 없습니다.`);
+//       }
+//     }
+  
+//     return totalPrice;
+//   }
+  
+function solution(input) {
+    let menuPrice = {"아메리카노": 4100, "카페라떼":4600, "카라멜마끼아또": 5100};
+
     let totalPrice = 0;
-  
-    for (let i = 0; i < orders.length; i++) {
-      const order = orders[i];
-      if (menuPrices.hasOwnProperty(order)) {
-        totalPrice += menuPrices[order];
-      } else {
-        console.log(`주문한 메뉴(${order})는 메뉴에 없습니다.`);
-      }
+
+    for(let i = 0; i < input.length; i++){
+        let order = input[i]
+        if(menuPrice[order] !== undefined){
+            totalPrice += menuPrice[order]
+        }
     }
-  
-    return totalPrice;
+    return totalPrice
   }
-  
   // 예시
-  const orders = ["아메리카노", "카페라떼", "카라멜마끼야또", "아메리카노"];
-  const total = calculateTotalPrice(orders);
+  const input = ["아메리카노", "카페라떼", "카라멜마끼야또", "아메리카노"];
+  const total = solution(input);
   console.log(`총 가격: ${total}원`);
   
