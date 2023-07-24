@@ -88,20 +88,42 @@
   
 
 
-// 반쪽 피라미드 만들기
-function sol(num){
-    let answer = ''
-    for(let i = 1; i <= num; i++){
-        for(let j = num; j > i; j--){
-            answer += " "
-        }for(let j = 1; j <= i; j++){
-            answer += "*"
+// // 반쪽 피라미드 만들기
+// function sol(num){
+//     let answer = ''
+//     for(let i = 1; i <= num; i++){
+//         for(let j = num; j > i; j--){
+//             answer += " "
+//         }for(let j = 1; j <= i; j++){
+//             answer += "*"
+//         }
+//         if(i !== num){
+//         answer +=  "\n"
+//         }
+//     }
+//     return answer
+// }
+
+// console.log(sol(7))
+
+
+
+// 좋아하는 숫자만 골라내기 
+function sol(input){
+
+    let result = []
+    let num_tuple = ['2','3','5','6','7','8','9']
+
+    for(let i = 0; i < input.length; i++){
+        let num = Number(input[i])
+        if(num_tuple.includes(num)){
+            result.push(num)
         }
-        if(i !== num){
-        answer +=  "\n"
+        if(result.length === 5){
+            break;
         }
     }
-    return answer
-}
+    return result
 
-console.log(sol(7))
+}
+console.log(sol("1, 3, 4,1"))
