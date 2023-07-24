@@ -68,21 +68,40 @@
 //     return totalPrice;
 //   }
   
-function solution(input) {
-    let menuPrice = {"아메리카노": 4100, "카페라떼":4600, "카라멜마끼아또": 5100};
+// function solution(input) {
+//     let menuPrice = {"아메리카노": 4100, "카페라떼":4600, "카라멜마끼아또": 5100};
 
-    let totalPrice = 0;
+//     let totalPrice = 0;
 
-    for(let i = 0; i < input.length; i++){
-        let order = input[i]
-        if(menuPrice[order] !== undefined){
-            totalPrice += menuPrice[order]
+//     for(let i = 0; i < input.length; i++){
+//         let order = input[i]
+//         if(menuPrice[order] !== undefined){
+//             totalPrice += menuPrice[order]
+//         }
+//     }
+//     return totalPrice
+//   }
+//   // 예시
+//   const input = ["아메리카노", "카페라떼", "카라멜마끼야또", "아메리카노"];
+//   const total = solution(input);
+//   console.log(`총 가격: ${total}원`);
+  
+
+
+// 반쪽 피라미드 만들기
+function sol(num){
+    let answer = ''
+    for(let i = 1; i <= num; i++){
+        for(let j = num; j > i; j--){
+            answer += " "
+        }for(let j = 1; j <= i; j++){
+            answer += "*"
+        }
+        if(i !== num){
+        answer +=  "\n"
         }
     }
-    return totalPrice
-  }
-  // 예시
-  const input = ["아메리카노", "카페라떼", "카라멜마끼야또", "아메리카노"];
-  const total = solution(input);
-  console.log(`총 가격: ${total}원`);
-  
+    return answer
+}
+
+console.log(sol(7))
