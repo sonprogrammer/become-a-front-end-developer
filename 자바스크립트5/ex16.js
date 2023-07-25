@@ -107,23 +107,23 @@
 // console.log(sol(7))
 
 
+// 잘린 피라미드 만들기
 
-// 좋아하는 숫자만 골라내기 
-function sol(input){
-
-    let result = []
-    let num_tuple = ['2','3','5','6','7','8','9']
-
-    for(let i = 0; i < input.length; i++){
-        let num = Number(input[i])
-        if(num_tuple.includes(num)){
-            result.push(num)
+// a부터 a숫자만큼 별을 그린후 다음숫자만큼 그 아랫줄에 별을 그리고 b까지 이러한 방식으로 별을 그린다
+function sol(a, b){
+    let answer=''
+    // 제일 위에 a수만큼 별 만들기 그리고 \n해주기 b수까지 반복
+    for(let i = 1; i <= (b-a)+1; i++){    //i는 층수니깐 ex) 5-3하면 별3개층 4개층 5개층 총 3개층으로됨
+        for(let j = a; j >= i; j++){
+            answer += "*"
         }
-        if(result.length === 5){
-            break;
+        if(i === a){
+            answer += "\n"
+        }else{
+        answer += "*"
         }
     }
-    return result
-
+    return answer
 }
-console.log(sol("1, 3, 4,1"))
+
+console.log(sol(3, 5))
