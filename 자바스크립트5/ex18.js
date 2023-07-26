@@ -293,3 +293,230 @@
 // }
 // console.log(sol(15))
 
+
+
+// 음식이름받고 계산하기
+// function sol(input){
+//     let menuPrice = {"아메": 4100, "카페": 4600, "카라":5100}
+
+//     let totalPrice = 0;
+//     for(let i = 0; i <= input.length; i++){
+//         let order = input[i]
+//         if(menuPrice[order] !== undefined){
+//             totalPrice +=menuPrice[order]
+//         }
+//     }
+//     return totalPrice
+
+// }
+
+// console.log(sol())
+
+// 반쪽 짜리 피라미드
+// function sol(input){
+//     let result =''
+//     for(let i = 1; i <= input; i++){
+//         for(let j = input; j > i; j--){
+//             result += " "
+//         }
+//         for(let j = 1; j <= i; j++){
+//             result += "*"
+//         }
+//         result += "\n"
+//     }
+//     return result
+// }
+
+// console.log(sol(3))
+
+
+
+// 잘린 피라미드
+// function sol(a, b){
+//     let result = ''
+//     for(let i = a; i <= b; i++){
+//         result += "*".repeat(i)
+        
+//         if(i !== b){
+//             result += "\n"
+//         }
+//     }
+//     return result
+// }
+
+// console.log(sol(3, 7))
+
+// 8갯수 찾기
+// function sol(input){
+//     let count = 0;
+//     for(let i = 1; i<=input; i++){
+//         let strNumber = i.toString()
+//         count += (strNumber.split('8').length -1)
+//     }
+//     return count
+// }
+
+// console.log(sol(20))
+
+
+// 끼리끼리
+// function sol(input){
+//     let red_pocket =[]
+//     let blue_pocket = []
+
+//     let num = input.split(' ').map(Number)
+
+//     for(let num1 of num){
+//         if(num1 >=0){
+//             red_pocket.push(num1)
+//         }else{
+//             blue_pocket.push(num1)
+//         }
+//     }
+//     return [red_pocket, blue_pocket]
+// }
+
+// console.log(sol('-1 2 1 -2 7 3 -1 0'))
+
+
+// in the middle
+// function sol(input){
+//     let answer
+//     let num = input.split(' ')
+//     let middle = Math.floor(num.length /2)
+
+//     answer = Number(num[middle])
+//     return answer
+// }
+
+// console.log(sol('4 5 9'))
+
+//angle
+// function sol(input){
+//     let answer
+//     let angle = input.split(' ')
+
+//     let a = Number(angle[0])
+//     let b = Number(angle[1])
+
+//     answer = 180 - (a+b)
+//     return answer
+// }
+
+// console.log(sol('30 20'))
+
+
+// 제곱근 합 제곱 차구하기
+
+// function sol(input){
+//     let answer = 0;
+//     let count = 0;
+//     let count1 = 0
+//     for(let i =1; i <= input; i++){
+//         count += i
+//     }
+//     for(let j = 1; j <=input; j++){
+//         count1 += j*j
+//     }
+
+//     answer = count * count
+//     return answer - count1
+// }
+// console.log(sol('10'))
+
+
+
+//이름받고 계산
+// function sol(input){
+//     let menuPrice = {"a": 4100, "b": 5000, "c":6000}
+
+//     let totalPrice = 0;
+//     for(let i =0; i < input.length; i++){
+//         let order = input[i]
+//         if(menuPrice[order] !== undefined){
+//             totalPrice += menuPrice[order]
+//         }
+
+//     }
+//     return totalPrice
+// }
+// console.log(sol())
+
+
+
+// 별만들기
+// function sol(input){
+//     let result = []
+//     for(let i = 1; i <= input; i++){
+//         for(let j = 0; j < (i <=5 ? i : 5); j++){
+//             result += "*"
+//         }
+//         if(i !== input){
+//             result += "\n"
+//         }
+//     }
+//     return result
+// }
+// console.log(sol(7))
+
+//반쪽짜리 피라미드
+// function sol(input){
+//     let answer = []
+//     for(let i = 1; i <= input; i++){
+//         for(let j = input; j > i; j--){
+//             answer +=" "
+//         }
+//         for(let j = 0; j < i; j++){
+//             answer += "*"
+//         }
+//         if(i !== input){
+//             answer += "\n"
+//         }
+//     }
+//     return answer
+// }
+// console.log(sol(5))
+
+// 잘린피라미드
+// function sol(a, b){
+//     let answer = ""
+//     for(let i = a; i <= b; i++){
+//         let row = "*".repeat(i)
+//         answer += row
+//         if(i !== b){
+//             answer +="\n"
+//         }
+        
+//     }
+//     return answer
+// }
+// console.log(sol(3 ,7))
+
+
+// 8은 내꺼
+// function sol(input){
+//     let count = 0;
+//     for(let i = 1; i<=input; i++){
+//         let strNumber = i.toString()
+//         count += (strNumber.split('8').length -1)
+//     }
+//     return count
+// }
+// console.log(sol(93))
+
+//끼리끼리
+function sol(input){
+    let a = []
+    let b = []
+    let num = input.split(' ')
+
+    for(let num1 of num){
+        if(num1 >=0){
+            a.push(num1)
+        }else{
+            b.push(num1)
+        }
+    }
+    return [a, b]
+}
+console.log(sol('-1 2 1 -2 7 3 -1 0'))
