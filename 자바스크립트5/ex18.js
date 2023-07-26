@@ -505,18 +505,92 @@
 // console.log(sol(93))
 
 //끼리끼리
-function sol(input){
-    let a = []
-    let b = []
-    let num = input.split(' ')
+// function sol(input){
+//     let a = []
+//     let b = []
+//     let num = input.split(' ')
 
-    for(let num1 of num){
-        if(num1 >=0){
-            a.push(num1)
-        }else{
-            b.push(num1)
-        }
+//     for(let num1 of num){
+//         if(num1 >=0){
+//             a.push(num1)
+//         }else{
+//             b.push(num1)
+//         }
+//     }
+//     return [a, b]
+// }
+// console.log(sol('-1 2 1 -2 7 3 -1 0'))
+
+// function sol(input){
+//     let menuPrice = {"a": 4100, "b": 5000, "c": 6000}
+
+//     let totalPrice = 0;
+//     for(let i = 0; i <=input.length; i++){
+//         let order = input[i]
+//         if(menuPrice[order] !==undefined){
+//             totalPrice += menuPrice[order]
+//         }
+//     }
+//     return totalPrice
+// }
+
+// console.log(sol("a"))
+
+
+// function sol(input){
+//     let answer = ''
+//     for(let i = 1; i <= input; i++){
+//         for(let j = input; j > i; j--){
+//             answer += " "
+//         }
+//         for(let j = 0; j <i; j++){
+//             answer += "*"
+//         }
+//         if(i !== input){
+//             answer += "\n"
+//         }
+//     }
+//     return answer
+// }
+// console.log(sol(3))
+
+
+// function sol(a, b){
+//     let answer = ''
+//     for(let i =a; i <= b; i++){
+//         let row = "*".repeat(i)
+//         answer += row
+//     if(i !== b){
+//         answer += "\n"
+//     }
+// }
+//     return answer
+// }
+// console.log(sol(4, 8))
+
+// function sol(input){
+//     let count = 0;
+//     for(let i = 1; i <= input; i++){
+//         let strNumber = i.toString()
+//         count += (strNumber.split('8').length - 1)
+//     }
+//     return count
+// }
+// console.log(sol(92))
+
+
+function solution(price, bargain) {
+    let totalPrice = price;
+  
+    for (let i = 0; i <= bargain.length; i++) {
+      totalPrice += bargain[i];
     }
-    return [a, b]
-}
-console.log(sol('-1 2 1 -2 7 3 -1 0'))
+  
+    if (totalPrice < price / 2 || totalPrice >= price) {
+      return "흥정 실패";
+    } else {
+      return totalPrice;
+    }
+  }
+  
+  console.log(solution(10000, [-1000, -2000, 1000, -500]));
