@@ -97,3 +97,80 @@
 // }
 
 // console.log(sol(10))
+
+// 노동용
+// function sol(input){
+//     let answer = []
+//     for(let i = 0; i < input.length; i++){
+//         if(input[i] === ' '){
+//             answer += '링디기디기\n'
+//         }else if(input[i] === '.'){
+//             answer += '딩딩딩\n'
+//         }
+//     }
+//     return answer
+// }
+// console.log(sol('나는 손 영진 이다.'))
+
+
+
+// 변수다루기
+// function sol(num, string){
+//     num += 204
+//     string +='elice!'
+//     return {num, string}
+// }
+// console.log(sol('num:, string: '))
+
+
+// 소수 합구하기
+// function sol(input){
+//     let answer 
+//     let sum = 0;
+//     for(let i = 2; i <= input; i++){
+//         let isPrime = true
+//         for(let j = 2; j < i; j++){
+//             if(i % j == 0){
+//                 isPrime = false
+//                 break
+//             }
+//         }
+//         if(isPrime){
+//             sum += i
+//         }
+//     }
+//     return sum
+// }
+// console.log(sol())
+
+// function sol(input){
+//     let answer 
+//     if(input % 2 == 0){
+//         answer = "\'even\'"
+//     }else{
+//         answer = '\"odd\"'
+//     }
+//     return input + ':' + answer
+
+// }
+// console.log(sol(11))
+
+
+// 삼각형 각도 구하기
+// function sol(input){
+
+//     let angle = 0;
+//     let totalAngle = 180
+//     let a = input.split(' ')
+//     let b = Number(a[0])
+//     let c = Number(a[1])
+//     angle = 180 - (b + c)
+// if(b+c >=180){
+//     return 0
+// }
+
+//     return angle
+    
+// }
+// console.log(sol('10 140'))
+
