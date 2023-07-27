@@ -695,9 +695,10 @@ function sol(input){
         for(let i = 0; j < i; j++){
             answer += "*"
         }
-        if(i !== input){
             answer += '\n'
-        }
+        
     }
-    return answe
+    return answer
 }
+
+console.log(sol(5))
