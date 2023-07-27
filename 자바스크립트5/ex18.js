@@ -643,28 +643,61 @@
 // 첫번째 숫자랑 두번째랑 연산자대로 연산후 그 결과를 두번째 숫자와 두번째연산자 연산후 그결과를 연산자순서대로 값을 반환함
 // 각 연산 값의 모든 합을 두번째에 값을 넣어줌
 
+// function sol(input){
+//     let answer = ''; //첫번째 값
+//     let answer2 = '';    //두번째 값 
+
+//     let values = input.split(' ')
+//     let a = Number(values[0])
+//     let b = Number(values[1])
+//     let c = values[2].split('')
+
+//     // console.log(c[2])
+//     for(let i = 0; i < c.length; i++){
+//         if(c[i] === "*"){
+//             answer += a * b;
+//         }else if(c[i] === "/"){
+//             answer = a /b;
+//         }else if(c[i] === '+'){
+//             answer = a + b;
+//         }else{
+//             answer = a - b;
+//         }
+
+//     }
+//     return answer
+// }
+//  console.log(sol('132 28 */++ '))
+
+
+// function sol(input){
+//     let answer = []
+//     for(let i = 1; i<=input; i++){
+//         if((i % 10) % 3 == 0 && i % 10 != 0){
+//             answer.push("짝")
+//         }else if((i / 10) % 3 == 0 && i / 10 != 0){
+//             answer.push("짝")
+//         }else{
+//             answer.push(i) 
+//         }
+//     }
+//     return answer
+// }
+// console.log(sol(33))
+
+
 function sol(input){
-    let answer = ''; //첫번째 값
-    let answer2 = '';    //두번째 값 
-
-    let values = input.split(' ')
-    let a = Number(values[0])
-    let b = Number(values[1])
-    let c = values[2].split('')
-
-    // console.log(c[2])
-    for(let i = 0; i < c.length; i++){
-        if(c[i] === "*"){
-            answer += a * b;
-        }else if(c[i] === "/"){
-            answer = a /b;
-        }else if(c[i] === '+'){
-            answer = a + b;
-        }else{
-            answer = a - b;
+    let answer = ''
+    for(let i = 1; i<=input; i++){
+        for(let j = input; j > i; j++){
+            answer += " "
         }
-
+        for(let i = 0; j < i; j++){
+            answer += "*"
+        }
+        if(i !== input){
+            answer += '\n'
+        }
     }
-    return answer
+    return answe
 }
- console.log(sol('132 28 */++ '))
