@@ -579,18 +579,92 @@
 // console.log(sol(92))
 
 
-function solution(price, bargain) {
-    let totalPrice = price;
+// function solution(price, bargain) {
+//     let totalPrice = price;
   
-    for (let i = 0; i <= bargain.length; i++) {
-      totalPrice += bargain[i];
+//     for (let i = 0; i <= bargain.length; i++) {
+//       totalPrice += bargain[i];
+//     }
+  
+//     if (totalPrice < price / 2 || totalPrice >= price) {
+//       return "흥정 실패";
+//     } else {
+//       return totalPrice;
+//     }
+//   }
+  
+//   console.log(solution(10000, [-1000, -2000, 1000, -500]));
+
+
+
+// function calculate(input) {
+//     let values = input.split(" "); // 입력 문자열을 공백으로 분리하여 배열로 변환
+//     let result = 0; // 초기 결과값은 0으로 설정
+//     let result1 = 0;
+  
+//     for (let i = 0; i < values.length; i++) {
+//       let current = values[i]; // 현재 배열 요소
+//       let operator = values[i + 1]; // 다음 배열 요소 (연산자)
+  
+//       if (!isNaN(current)) {
+//         // 현재 요소가 숫자인지 확인
+//         current = parseInt(current); // 숫자로 변환
+//       } else {
+//         continue; // 숫자가 아니면 다음 요소로 건너뜀
+//       }
+  
+//       if (operator === "*/") {
+//         // 연산자가 '*/'인 경우
+//         let nextValue = parseInt(values[i + 2]); // 다음 다음 요소를 숫자로 변환
+//         if (operator === "*") {
+//           current *= nextValue; // '*' 연산 수행
+//         } else if (operator === "/") {
+//           current /= nextValue; // '/' 연산 수행
+//         }
+//         i += 2; // 다음 다음 요소까지 처리했으므로 인덱스 2 증가
+//       } else if (operator === "+") {
+//         // 연산자가 '+'인 경우
+//         current += parseInt(values[i + 2]); // 다음 다음 요소를 숫자로 변환하여 더함
+//         i += 2; // 다음 다음 요소까지 처리했으므로 인덱스 2 증가
+//       }
+  
+//       result = current; // 현재 연산 결과를 최종 결과값으로 설정
+//     }
+  
+//     console.log(result); // 최종 결과값 출력
+//     console.log(result + 11); // 최종 결과값과 11을 더한 값을 출력
+//   }
+  
+//   calculate("1 2 */++"); // 출력: 5, 16
+  
+
+
+// 132 28 */++ 
+// 첫번째 숫자랑 두번째랑 연산자대로 연산후 그 결과를 두번째 숫자와 두번째연산자 연산후 그결과를 연산자순서대로 값을 반환함
+// 각 연산 값의 모든 합을 두번째에 값을 넣어줌
+
+function sol(input){
+    let answer = ''; //첫번째 값
+    let answer2 = '';    //두번째 값 
+
+    let values = input.split(' ')
+    let a = Number(values[0])
+    let b = Number(values[1])
+    let c = values[2].split('')
+
+    // console.log(c[2])
+    for(let i = 0; i < c.length; i++){
+        if(c[i] === "*"){
+            answer += a * b;
+        }else if(c[i] === "/"){
+            answer = a /b;
+        }else if(c[i] === '+'){
+            answer = a + b;
+        }else{
+            answer = a - b;
+        }
+
     }
-  
-    if (totalPrice < price / 2 || totalPrice >= price) {
-      return "흥정 실패";
-    } else {
-      return totalPrice;
-    }
-  }
-  
-  console.log(solution(10000, [-1000, -2000, 1000, -500]));
+    return answer
+}
+ console.log(sol('132 28 */++ '))
