@@ -702,3 +702,13 @@
 // }
 
 // console.log(sol(5))
+
+function sol(input){
+    let count = 0;
+    for(let i = 1; i<=input; i++){
+        let strNumber = i.toString()
+        count += (strNumber.split('8').length -1)
+    }
+    return count
+}
+console.log(sol(93))
