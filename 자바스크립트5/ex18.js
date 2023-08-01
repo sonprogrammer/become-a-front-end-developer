@@ -686,19 +686,19 @@
 // console.log(sol(33))
 
 
-function sol(input){
-    let answer = ''
-    for(let i = 1; i<=input; i++){
-        for(let j = input; j > i; j++){
-            answer += " "
-        }
-        for(let i = 0; j < i; j++){
-            answer += "*"
-        }
-            answer += '\n'
+// function sol(input){
+//     let answer = ''
+//     for(let i = 1; i<=input; i++){
+//         for(let j = input; j > i; j++){
+//             answer += " "
+//         }
+//         for(let i = 0; j < i; j++){
+//             answer += "*"
+//         }
+//             answer += '\n'
         
-    }
-    return answer
-}
+//     }
+//     return answer
+// }
 
-console.log(sol(5))
+// console.log(sol(5))
