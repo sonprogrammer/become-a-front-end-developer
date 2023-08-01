@@ -713,3 +713,13 @@
 // }
 // console.log(sol(93))
 
+function sol(input){
+    let answer = []
+    a = input.split(' ')
+    answer.push(typeof a)
+    answer.push(a[0])
+
+    return answer
+
+}
+console.log(sol('1'))
