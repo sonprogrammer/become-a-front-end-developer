@@ -726,17 +726,34 @@
 
 
 
-function sol(input){
-    let answer = ''
-    for(let i = 1; i<=input; i++){
-        for(let j = input; j > i; j++){
-            answer += " "
-        }
-        for(let i = 0; j < i; j++){
-            answer += "*"
-        }
-            answer += '\n'
+// function sol(input){
+//     let answer = ''
+//     for(let i = 1; i<=input; i++){
+//         for(let j = input; j > i; j++){
+//             answer += " "
+//         }
+//         for(let i = 0; j < i; j++){
+//             answer += "*"
+//         }
+//             answer += '\n'
         
-    }
+//     }
+//     return answer
+// }
+
+
+
+function sol(input){
+    let answer;
+
+    let num = input.split(' ')
+    let a = num[0]
+    let b = num[1]
+    let c = num[2]
+    let d = num[3]
+    answer = (a <= b && a == d && b> c && c < 6) || (a == b && a == c && a == d)
+
     return answer
 }
+
+console.log(sol('2 2 2 9'))
