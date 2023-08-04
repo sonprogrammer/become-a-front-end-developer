@@ -722,4 +722,4 @@ function sol(input){
     return answer
 
 }
-console.log(sol('1'))
+console.log(sol('10 2'))
