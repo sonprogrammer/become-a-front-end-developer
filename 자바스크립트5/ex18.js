@@ -713,13 +713,30 @@
 // }
 // console.log(sol(93))
 
+// function sol(input){
+//     let answer = []
+//     a = input.split(' ')
+//     answer.push(typeof a)
+//     answer.push(a[0])
+
+//     return answer
+
+// }
+// console.log(sol('10 2'))
+
+
+
 function sol(input){
-    let answer = []
-    a = input.split(' ')
-    answer.push(typeof a)
-    answer.push(a[0])
-
+    let answer = ''
+    for(let i = 1; i<=input; i++){
+        for(let j = input; j > i; j++){
+            answer += " "
+        }
+        for(let i = 0; j < i; j++){
+            answer += "*"
+        }
+            answer += '\n'
+        
+    }
     return answer
-
 }
-console.log(sol('10 2'))
