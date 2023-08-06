@@ -743,17 +743,17 @@
 
 
 
-function sol(input){
-    let answer;
+// function sol(input){
+//     let answer;
 
-    let num = input.split(' ')
-    let a = num[0]
-    let b = num[1]
-    let c = num[2]
-    let d = num[3]
-    answer = (a <= b && a == d && b> c && c < 6) || (a == b && a == c && a == d)
+//     let num = input.split(' ')
+//     let a = num[0]
+//     let b = num[1]
+//     let c = num[2]
+//     let d = num[3]
+//     answer = (a <= b && a == d && b> c && c < 6) || (a == b && a == c && a == d)
 
-    return answer
-}
+//     return answer
+// }
 
-console.log(sol('2 2 2 9'))
+// console.log(sol('2 2 2 9'))
