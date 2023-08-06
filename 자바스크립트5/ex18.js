@@ -757,3 +757,20 @@
 // }
 
 // console.log(sol('2 2 2 9'))
+
+function sol(input){
+    let answer = []
+    for(let i = 1; i <= input; i++){
+        for(let j = input; j > i; j--){
+            answer +=" "
+        }
+        for(let j = 0; j < i; j++){
+            answer += "*"
+        }
+        if(i !== input){
+            answer += "\n"
+        }
+    }
+    return answer
+}
+console.log(sol(5))
