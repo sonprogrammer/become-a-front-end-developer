@@ -774,3 +774,20 @@
 //     return answer
 // }
 // console.log(sol(5))
+
+
+function solution(price, bargain) {
+    let totalPrice = price;
+  
+    for (let i = 0; i <= bargain.length; i++) {
+      totalPrice += bargain[i];
+    }
+  
+    if (totalPrice < price / 2 || totalPrice >= price) {
+      return "흥정 실패";
+    } else {
+      return totalPrice;
+    }
+  }
+  
+  console.log(solution(10000, [-1000, -2000, 1000, -500]));
